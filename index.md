@@ -14,11 +14,11 @@ layout: home
 title: Home
 
 # One short line describing your role. Shown just below your name.
-hero_subtitle: "PhD Researcher in [Your Field], [Your Institution]"
+hero_subtitle: "PhD Researcher in Cognitive Neuroscience | Sensory Science | Flavour Perception"
 
 # One short, evocative sentence about what your research is about.
 # Shown in italics beneath the subtitle.
-hero_tagline: "Exploring how [your research question]."
+hero_tagline: "From sensory experience to cognitive maps of flavour."
 
 # Path to your photo, once you upload one to assets/images/.
 # Leave the quotes empty ("") to show a placeholder circle with
@@ -32,12 +32,12 @@ portrait: ""
 # pattern for each one. Aim for 3-6 for a clean grid.
 # --------------------------------------------------------------
 research_interests:
-  - title: "Research theme one"
-    description: "One or two sentences describing this research theme in plain language."
-  - title: "Research theme two"
-    description: "One or two sentences describing this research theme in plain language."
-  - title: "Research theme three"
-    description: "One or two sentences describing this research theme in plain language."
+  - title: "Flavour Perception & Cognitive Maps"
+    description: "Investigating how the brain integrates smell, taste, vision and context to construct the experience of flavour. Using behavioural experiments and computational methods to understand how said flavours are represented in the brain."
+  - title: "Sensory Expertise"
+    description: "Studying how training shapes perception, memory and decision-making in wine, coffee and other expert sensory domains."
+  - title: "Wine & Coffee Science"
+    description: "Applying cognitive neuroscience to real-world sensory evaluation, education and product experience."
 ---
 
 <!--
@@ -48,8 +48,10 @@ research_interests:
   background/affiliation.
 -->
 
-I am a [your role, e.g. "doctoral researcher"] at [your institution], working on [one-sentence description of your research area]. My work sits at the intersection of [field A] and [field B], and is motivated by [the broader question or problem you care about].
+I am a PhD researcher in cognitive neuroscience exploring how the brain constructs, represents and remembers flavour. My research investigates how sensory experiences are transformed into meaningful mental representations, and how expertise reshapes these processes through learning and experience. Using wine and coffee as model systems, I combine behavioural experiments, computational approaches and sensory science to better understand the cognitive mechanisms underlying flavour perception.
 
-Before starting my current position, I [brief academic background — previous degree, institution, or notable prior work]. My approach combines [method or perspective] with [another method or perspective], which I use to [what this lets you do or discover].
+My work lies at the intersection of cognitive neuroscience and sensory science. I am interested in how flavours are organised into cognitive maps that support perception, memory, categorisation and decision-making, and in how these representations evolve as expertise develops. By studying expert tasters alongside novices, I aim to investigate the cognitive principles that underlie human sensory expertise.
 
-Outside of my core research, I am interested in [teaching / outreach / open science / a secondary research interest — optional, delete if not applicable].
+Beyond research, I work closely with the wine and specialty coffee communities to bridge scientific research with professional practice. As an international specialty coffee judge and educator, I contribute to sensory evaluation, competition judging and professional training, while collaborating with industry partners to translate cognitive science into practical applications. I am also committed to science communication and interdisciplinary collaborations that connect academic research with the worlds of coffee and wine.
+
+
