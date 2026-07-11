@@ -1,0 +1,107 @@
+# ============================================================
+# _config.yml
+# This is the master configuration file for your Jekyll site.
+# Jekyll reads this once when it builds the site. It is NOT
+# something visitors ever see directly.
+# ============================================================
+
+# --- Basic site information ---
+title: "Zuzanna Dedyk"
+description: "Academic website of Zuzanna Dedyk — research, publications, talks, and projects."
+url: "https://zuzanna-dedyk.github.io"
+baseurl: ""
+
+# --- Author / contact details ---
+# These values are reused across the whole site (footer, contact page,
+# social icons, etc.) so you only ever update your email or ORCID here,
+# in ONE place, instead of hunting through every page.
+author:
+  name: "Zuzanna Dedyk"
+  email: "your.email@example.com"
+  institution: "Your Institution / Department"
+  google_scholar: ""   # paste full profile URL later
+  orcid: ""             # paste full ORCID URL later
+  github: "zuzannadedyk"
+  linkedin: ""
+  bluesky: ""
+  x: ""
+
+# --- Markdown engine ---
+markdown: kramdown
+kramdown:
+  input: GFM              # GitHub-Flavored Markdown (tables, etc.)
+  syntax_highlighter: rouge
+
+# --- URL structure for standalone pages ---
+permalink: /:title/
+
+# --- Collections ---
+# A "collection" is a group of Markdown files that Jekyll treats as a
+# structured set of items (like a mini-database). This is what lets you
+# add a new publication just by dropping a new .md file in _publications/.
+collections:
+  site_pages:
+    output: true
+    permalink: /:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
+  publications:
+    output: true
+    permalink: /publications/:path/
+  talks:
+    output: true
+    permalink: /talks/:path/
+  workshops:
+    output: true
+    permalink: /workshops/:path/
+
+# --- Defaults ---
+# Automatically applies a layout to every file in a collection so you
+# never need to type "layout: publication" inside each publication file.
+defaults:
+  - scope:
+      path: ""
+      type: "site_pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: "publication"
+  - scope:
+      path: ""
+      type: "talks"
+    values:
+      layout: "talk"
+  - scope:
+      path: ""
+      type: "workshops"
+    values:
+      layout: "workshop"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# --- Plugins ---
+# These are all on GitHub Pages' approved safe list, so they work with
+# a plain "git push" — no special build pipeline required.
+plugins:
+  - jekyll-seo-tag     # generates SEO meta tags automatically
+  - jekyll-sitemap     # generates sitemap.xml automatically
+  - jekyll-feed        # generates an RSS feed automatically
+
+# --- Files Jekyll should ignore when building ---
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor

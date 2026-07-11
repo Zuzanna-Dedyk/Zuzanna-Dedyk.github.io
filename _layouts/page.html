@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<!--
+  _layouts/page.html
+  Used automatically by every file in _pages/ (Research, CV, Contact,
+  etc — set in _config.yml under "defaults", so you never type this
+  by hand). It adds a consistent title header above the page content,
+  built from the "title" you set in the page's front matter.
+-->
+<article class="page">
+  <header class="page__header">
+    <h1 class="page__title">{{ page.title }}</h1>
+    {% if page.subtitle %}
+    <p class="page__subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+  </header>
+
+  <div class="page__content">
+    {{ content }}
+  </div>
+</article>

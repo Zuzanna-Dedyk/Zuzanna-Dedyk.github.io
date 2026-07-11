@@ -1,0 +1,28 @@
+<!--
+  _includes/head.html
+  Everything that goes inside <head> on every page: character encoding,
+  responsive viewport, page title, fonts, and the main stylesheet.
+  jekyll-seo-tag (a plugin) automatically adds extra meta tags for
+  search engines and social media previews based on _config.yml.
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+
+<!-- Automatic SEO meta tags (description, Open Graph, Twitter cards) -->
+{% seo %}
+
+<!-- Automatic RSS feed and sitemap links -->
+{% feed_meta %}
+
+<!-- Fonts: Fraunces (headlines), Inter (body text), IBM Plex Mono (labels/meta) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<!-- Site favicon -->
+<link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
+
+<!-- Main stylesheet -->
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">

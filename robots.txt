@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zuzanna-dedyk.github.io/sitemap.xml
