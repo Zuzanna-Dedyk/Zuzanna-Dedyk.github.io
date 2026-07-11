@@ -14,11 +14,11 @@ layout: home
 title: Home
 
 # One short line describing your role. Shown just below your name.
-hero_subtitle: "PhD Researcher in [Your Field], [Your Institution]"
+hero_subtitle: "PhD Researcher in Neuroscience, Champalimaud Foundation"
 
 # One short, evocative sentence about what your research is about.
 # Shown in italics beneath the subtitle.
-hero_tagline: "Exploring how [your research question]."
+hero_tagline: "Exploring cognitive mechanisms underlying flavour perception."
 
 # Path to your photo, once you upload one to assets/images/.
 # Leave the quotes empty ("") to show a placeholder circle with
