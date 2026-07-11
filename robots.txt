@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zuzannadedyk.github.io/sitemap.xml
 Sitemap: https://zuzanna-dedyk.github.io/sitemap.xml

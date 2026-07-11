@@ -1,10 +1,8 @@
-# zuzannadedyk.github.io
 # Zuzanna-Dedyk.github.io
 
 Personal academic website of Zuzanna Dedyk, built with Jekyll and hosted
 on GitHub Pages.
 
-Live site: https://zuzannadedyk.github.io
 Live site: https://zuzanna-dedyk.github.io
 
 ## How the content is organised

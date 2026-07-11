@@ -8,7 +8,6 @@
 # --- Basic site information ---
 title: "Zuzanna Dedyk"
 description: "Academic website of Zuzanna Dedyk — research, publications, talks, and projects."
-url: "https://zuzannadedyk.github.io"
 url: "https://zuzanna-dedyk.github.io"
 baseurl: ""
 
@@ -18,10 +17,14 @@ baseurl: ""
 # in ONE place, instead of hunting through every page.
 author:
   name: "Zuzanna Dedyk"
+  email: "your.email@example.com"
   institution: "Your Institution / Department"
+  google_scholar: ""   # paste full profile URL later
+  orcid: ""             # paste full ORCID URL later
   github: "zuzannadedyk"
-  #bluesky: ""
-
+  linkedin: ""
+  bluesky: ""
+  x: ""
 
 # --- Markdown engine ---
 markdown: kramdown
