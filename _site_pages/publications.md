@@ -1,6 +1,4 @@
 ---
-layout: collection-index
+layout: publications
 title: Publications
-collection: publications
-sort_by: year
 ---

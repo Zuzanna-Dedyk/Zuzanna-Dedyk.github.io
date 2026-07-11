@@ -1,5 +1,6 @@
 ---
 title: "Sample talk title"
+photo: ""
 conference: "Conference or event name"
 location: "City, Country"
 date: 2026-09-15
