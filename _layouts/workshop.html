@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<!--
+  _layouts/workshop.html
+  Renders one individual workshop page. Applied automatically to
+  every file in _workshops/ (set in _config.yml).
+-->
+<article class="page item-page">
+  <a class="back-link" href="{{ '/workshops/' | relative_url }}">&larr; All workshops</a>
+
+  <header class="page__header">
+    <h1 class="page__title">{{ page.title }}</h1>
+    <p class="page__subtitle">
+      {% if page.role %}{{ page.role }}{% endif %}
+      {% if page.organiser %} — {{ page.organiser }}{% endif %}
+      {% if page.location %} · {{ page.location }}{% endif %}
+    </p>
+  </header>
+
+  <div class="item-page__meta">
+    {% if page.audience %}<p><strong>Audience:</strong> {{ page.audience }}</p>{% endif %}
+  </div>
+
+  <div class="page__content">
+    {{ content }}
+  </div>
+
+  {% if page.photos %}
+  <div class="item-page__photo-grid">
+    {% for photo in page.photos %}
+    <img src="{{ photo | relative_url }}" alt="">
+    {% endfor %}
+  </div>
+  {% endif %}
+</article>
