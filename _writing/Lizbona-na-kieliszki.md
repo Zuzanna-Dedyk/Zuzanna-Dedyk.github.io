@@ -1,7 +1,7 @@
 ---
 title: "Lizbona na kieliszki"
 outlet: "Trybuszon"
-year: 2026
+year: 2026-
 photo: ""
 url: ""
 abstract: "An essay exploring Lisbon through its wine bars, combining local culture with reflections on tasting, place and sensory experience."
