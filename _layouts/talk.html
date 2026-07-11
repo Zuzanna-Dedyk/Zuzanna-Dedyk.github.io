@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<!--
+  _layouts/talk.html
+  Renders one individual talk page. Applied automatically to every
+  file in _talks/ (set in _config.yml).
+-->
+<article class="page item-page">
+  <a class="back-link" href="{{ '/talks/' | relative_url }}">&larr; All talks</a>
+
+  <header class="page__header">
+    <h1 class="page__title">{{ page.title }}</h1>
+    <p class="page__subtitle">
+      {% if page.conference %}{{ page.conference }}{% endif %}
+      {% if page.location %} — {{ page.location }}{% endif %}
+      {% if page.date %} · {{ page.date | date: "%B %Y" }}{% endif %}
+    </p>
+  </header>
+
+  {% if page.abstract %}
+  <div class="page__content">
+    <p>{{ page.abstract }}</p>
+  </div>
+  {% endif %}
+
+  <div class="page__content">
+    {{ content }}
+  </div>
+
+  <div class="item-page__links">
+    {% if page.slides %}<a class="btn btn--secondary" href="{{ page.slides | relative_url }}" target="_blank" rel="noopener noreferrer">Slides</a>{% endif %}
+    {% if page.recording %}<a class="btn btn--secondary" href="{{ page.recording }}" target="_blank" rel="noopener noreferrer">Recording</a>{% endif %}
+  </div>
+</article>

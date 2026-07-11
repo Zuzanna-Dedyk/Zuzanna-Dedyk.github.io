@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<!--
+  _layouts/collection-index.html
+  A reusable "list everything in a collection" page. Used by the
+  Projects, Publications, Talks, and Workshops pages (in _site_pages/).
+  Each of those pages just needs two lines of front matter:
+
+    collection: projects      <- which collection to list
+    sort_by: date              <- optional: front matter field to sort by (newest first)
+
+  You never edit this file to add new content — dropping a new file
+  into _projects/, _publications/, etc. makes it appear here
+  automatically.
+-->
+<article class="page">
+  <header class="page__header">
+    <h1 class="page__title">{{ page.title }}</h1>
+    {% if page.subtitle %}
+    <p class="page__subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+  </header>
+
+  {% assign items = site[page.collection] %}
+  {% if page.sort_by %}
+    {% assign items = items | sort: page.sort_by | reverse %}
+  {% endif %}
+
+  {% if items.size == 0 %}
+  <p class="empty-state">Nothing here yet.</p>
+  {% else %}
+  <div class="card-grid">
+    {% for item in items %}
+    <a class="card" href="{{ item.url | relative_url }}">
+      <h3>{{ item.title }}</h3>
+      {% if item.summary %}<p>{{ item.summary }}</p>{% endif %}
+      {% if item.abstract %}<p>{{ item.abstract | truncatewords: 22 }}</p>{% endif %}
+      {% if item.description %}<p>{{ item.description | truncatewords: 22 }}</p>{% endif %}
+    </a>
+    {% endfor %}
+  </div>
+  {% endif %}
+</article>

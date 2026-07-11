@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<!--
+  _layouts/publication.html
+  Renders one individual publication page. Applied automatically to
+  every file in _publications/ (set in _config.yml).
+-->
+<article class="page item-page">
+  <a class="back-link" href="{{ '/publications/' | relative_url }}">&larr; All publications</a>
+
+  <header class="page__header">
+    <h1 class="page__title">{{ page.title }}</h1>
+    <p class="page__subtitle">
+      {% if page.authors %}{{ page.authors }}{% endif %}
+      {% if page.journal %} — {{ page.journal }}{% endif %}
+      {% if page.year %} ({{ page.year }}){% endif %}
+    </p>
+  </header>
+
+  {% if page.abstract %}
+  <div class="page__content">
+    <h2>Abstract</h2>
+    <p>{{ page.abstract }}</p>
+  </div>
+  {% endif %}
+
+  {% if content and content != "" %}
+  <div class="page__content">
+    {{ content }}
+  </div>
+  {% endif %}
+
+  <div class="item-page__links">
+    {% if page.doi %}<a class="btn btn--secondary" href="{{ page.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}
+    {% if page.pdf %}<a class="btn btn--secondary" href="{{ page.pdf | relative_url }}" target="_blank" rel="noopener noreferrer">PDF</a>{% endif %}
+    {% if page.supplementary %}<a class="btn btn--secondary" href="{{ page.supplementary | relative_url }}" target="_blank" rel="noopener noreferrer">Supplementary material</a>{% endif %}
+  </div>
+
+  {% if page.bibtex %}
+  <details class="bibtex-block">
+    <summary>BibTeX</summary>
+    <pre>{{ page.bibtex }}</pre>
+  </details>
+  {% endif %}
+</article>
