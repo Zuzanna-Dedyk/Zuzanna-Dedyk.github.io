@@ -1,21 +1,14 @@
 ---
 title: "Contradictory or Complementary? Stakeholders' Perceptions of a Circular Economy for Single-Use Plastics"
-authors: "Grodzińska-Jurczak, M., Krawczyk, A., Akhshik, A., **Dedyk, Z.**, & Strzelecka, M."
+authors: "Małgorzata Grodzińska-Jurczak, Aleksandra Krawczyk, Arash Akhshik, Zuzanna Dedyk, Marianna Strzelecka"
 journal: "Waste Management"
 year: 2022
 doi: "https://doi.org/10.1016/j.wasman.2022.01.036"
-citation: "Grodzińska-Jurczak, M., Krawczyk, A., Akhshik, A., **Dedyk, Z.**, & Strzelecka, M. (2022). *Contradictory or complementary? Stakeholders' perceptions of a circular economy for single-use plastics.* Waste Management, 142, 1–8"
 
-abstract: "A peer-reviewed publication explored how consumers and coffee professionals perceive sustainability within specialty coffee culture. The study investigated attitudes toward single-use plastics across different stakeholder groups, demonstrating how environmental decision-making is influenced not only by policy but also by everyday behavioural practices.
+citation: "Grodzińska-Jurczak, M., Krawczyk, A., Akhshik, A., Dedyk, Z., & Strzelecka, M. (2022). Contradictory or complementary? Stakeholders' perceptions of a circular economy for single-use plastics. Waste Management, 142, 1–8"
 
-Although centred on sustainability rather than neuroscience, this work established a lasting interest in understanding how perception influences real-world behaviour.."
-bibtex: |
-  @article{dedyk2026sample,
-    title={Sample publication title},
-    author={Dedyk, Zuzanna and Coauthor, A.},
-    journal={Journal Name},
-    year={2026}
-  }
+abstract: "Single-use plastics (SUPs) represent one of the largest and rapidly growing segments of the plastics industry. The strategies to mitigate plastic hazards has become more difficult during the COVID-19 pandemic; SUPs have gained positive health-related attributes among consumers and remain the preferred packaging material. One of the most promising strategies to tackle the SUPs problem is a worldwide transition towards a circular economy (CE) for plastics. Here, we propose the reconceptualization of a CE for SUPs based on an analysis of the perceptions of stakeholders and the public from social, psychological, and communication-related perspectives. Our study utilized focus groups with primary and secondary stakeholders – differing in their power regarding SUP CE governance – and general consumers to identify their perceptions regarding challenges to and solutions for a CE for SUPs, thereby unveiling the potential for trustworthy knowledge co-creation. Our findings demonstrate that trustworthy knowledge-in-action is the primary driver for achieving sustainability transitions across stakeholders and suggest a significant discrepancy between young consumers and producers. Furthermore, we argue that exploring diversified approaches to knowledge co-creation necessitates various disciplinary entry points, ranging from different perspectives (challenges vs. solutions, individual vs. systemic levels, diversity in agenda-setting) to innovative attempts to understand knowledge production behaviour, especially for policymakers. Perceiving scientists as science communicators who can effectively inform involved stakeholders and general consumers and engage them in SUP crisis mitigation actions, the results of our study (jointly created manifest followed by a series of posters) are subject to further research and proposals for policy decisions."
+
 ---
 
 Optional: add any extra notes about the publication here in Markdown (press coverage, related datasets, etc). You can also leave this blank — the abstract above is often enough.
