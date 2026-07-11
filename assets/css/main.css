@@ -14,14 +14,22 @@
    -------------------------------------------------------------------------- */
 :root {
   /* Colour */
-  --color-bg: #FBFAF7;            /* warm paper background */
-  --color-bg-alt: #F3F1EA;        /* slightly deeper background, for alternating sections */
-  --color-surface: #FFFFFF;       /* card backgrounds */
-  --color-text: #1C1B19;          /* primary text (near-black ink) */
-  --color-text-secondary: #6B6A63;/* secondary/meta text (dates, authors, captions) */
-  --color-border: #E2E0D9;        /* hairline borders and dividers */
-  --color-accent: #24435F;        /* restrained deep ink-blue accent */
-  --color-accent-bg: #EBF0F4;     /* pale accent background, for tags/badges */
+  --color-bg: #FBFAF7;
+  /* warm paper background */
+  --color-bg-alt: #F3F1EA;
+  /* slightly deeper background, for alternating sections */
+  --color-surface: #FFFFFF;
+  /* card backgrounds */
+  --color-text: #1C1B19;
+  /* primary text (near-black ink) */
+  --color-text-secondary: #6B6A63;
+  /* secondary/meta text (dates, authors, captions) */
+  --color-border: #E2E0D9;
+  /* hairline borders and dividers */
+  --color-accent: #24435F;
+  /* restrained deep ink-blue accent */
+  --color-accent-bg: #EBF0F4;
+  /* pale accent background, for tags/badges */
 
   /* Typography */
   --font-display: 'Fraunces', Georgia, serif;
@@ -87,7 +95,10 @@ ul {
   list-style: none;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-display);
   font-weight: 500;
   line-height: 1.2;
@@ -103,7 +114,10 @@ p {
   html {
     scroll-behavior: auto;
   }
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -441,9 +455,11 @@ button:focus-visible {
   .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
+
   .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) {
     opacity: 0;
   }
+
   .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
   }
@@ -536,5 +552,175 @@ button:focus-visible {
     flex-direction: column;
     text-align: center;
     padding-top: var(--space-xl);
+  }
+}
+
+/* 14. RESEARCH / PUBLICATIONS / EVENTS
+   Styles for the restructured Research page (project tiles),
+   the Publications page (citation list + science communication tiles),
+   and the Events page (split Talks/Workshops columns).
+   -------------------------------------------------------------------------- */
+
+/* A labeled divider used before each sub-section within a page
+   (e.g. "Projects" under Research, "Science communication" under
+   Publications). */
+.section-heading {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.section-heading h2 {
+  font-size: 1.5rem;
+}
+
+/* Project tile image on the Research page — fills the top of the
+   card edge-to-edge using a negative margin to cancel the card's
+   own padding. */
+.item-card__image {
+  width: calc(100% + (var(--space-md) * 2));
+  height: 160px;
+  object-fit: cover;
+  margin: calc(var(--space-md) * -1) calc(var(--space-md) * -1) var(--space-sm);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+/* Scientific publications, shown as a numbered APA-style citation list */
+.citation-list {
+  padding-left: 1.4rem;
+  margin: 0 0 var(--space-lg);
+}
+
+.citation {
+  margin-bottom: var(--space-sm);
+  line-height: 1.6;
+}
+
+.citation__text {
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+}
+
+.citation__text:hover {
+  color: var(--color-accent);
+}
+
+.citation__dot {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.55rem;
+  color: var(--color-accent);
+  vertical-align: middle;
+  transition: opacity var(--transition-fast);
+}
+
+.citation__dot:hover {
+  opacity: 0.6;
+}
+
+/* Science communication pieces — photo tiles linking out to the
+   external article */
+.tile-card {
+  display: block;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--color-surface);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.tile-card:hover {
+  box-shadow: 0 8px 24px rgba(28, 27, 25, 0.06);
+  transform: translateY(-2px);
+}
+
+.tile-card__image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.tile-card__caption {
+  padding: var(--space-sm) var(--space-md);
+}
+
+.tile-card__caption h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+}
+
+.tile-card__outlet {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Events page — split Talks / Workshops columns */
+.events-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.events-column h2 {
+  font-size: 1.3rem;
+  margin-bottom: var(--space-md);
+}
+
+.event-tile {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  margin-bottom: var(--space-sm);
+  background: var(--color-surface);
+  transition: box-shadow var(--transition-base);
+}
+
+.event-tile:hover {
+  box-shadow: 0 8px 24px rgba(28, 27, 25, 0.06);
+}
+
+.event-tile__image {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+
+.event-tile__body h3 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.event-tile__body p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.event-tile__photo-strip {
+  display: flex;
+  gap: 4px;
+  margin-bottom: var(--space-xs);
+}
+
+.event-tile__photo-strip img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+@media (max-width: 760px) {
+  .events-split {
+    grid-template-columns: 1fr;
   }
 }
