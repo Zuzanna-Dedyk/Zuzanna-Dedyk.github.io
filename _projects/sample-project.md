@@ -5,6 +5,7 @@ summary: "One or two sentences describing what this project is about, shown on t
 collaborators: "Name One, Name Two"
 funding: "Funding body or grant name"
 timeline: "2024 – present"
+
 ---
 
 Write a longer description of the project here in plain Markdown paragraphs — the background, your specific contribution, methods used, and any early findings or outcomes.
