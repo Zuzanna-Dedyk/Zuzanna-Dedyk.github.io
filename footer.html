@@ -1,0 +1,37 @@
+<!--
+  _includes/footer.html
+  The footer at the bottom of every page: social/contact links and a
+  copyright line. All the links pull from the "author" section of
+  _config.yml, so updating your ORCID or Google Scholar link there
+  updates it everywhere on the site automatically.
+  Links with an empty value in _config.yml are skipped automatically.
+-->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <ul class="social-links" aria-label="Social and academic profile links">
+      {% if site.author.google_scholar and site.author.google_scholar != "" %}
+      <li><a href="{{ site.author.google_scholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+      {% endif %}
+      {% if site.author.orcid and site.author.orcid != "" %}
+      <li><a href="{{ site.author.orcid }}" target="_blank" rel="noopener noreferrer">ORCID</a></li>
+      {% endif %}
+      {% if site.author.github and site.author.github != "" %}
+      <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      {% endif %}
+      {% if site.author.linkedin and site.author.linkedin != "" %}
+      <li><a href="{{ site.author.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      {% endif %}
+      {% if site.author.bluesky and site.author.bluesky != "" %}
+      <li><a href="{{ site.author.bluesky }}" target="_blank" rel="noopener noreferrer">Bluesky</a></li>
+      {% endif %}
+      {% if site.author.x and site.author.x != "" %}
+      <li><a href="{{ site.author.x }}" target="_blank" rel="noopener noreferrer">X</a></li>
+      {% endif %}
+      <li><a href="mailto:{{ site.author.email }}">Email</a></li>
+    </ul>
+
+    <p class="site-footer__copyright">
+      © {{ site.time | date: '%Y' }} {{ site.author.name }}. Built with Jekyll, hosted on GitHub Pages.
+    </p>
+  </div>
+</footer>

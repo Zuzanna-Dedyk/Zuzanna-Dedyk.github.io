@@ -1,0 +1,450 @@
+/* ==========================================================================
+   assets/css/main.css
+   This is the ONE stylesheet for the entire site. It is organised into
+   clearly labelled sections below. You will rarely need to edit this
+   file — new publications/projects/talks/workshops never require CSS
+   changes, they just use the styles already defined here.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DESIGN TOKENS
+   All colours, fonts, spacing and other repeated values live here as
+   CSS custom properties ("variables"). Changing a value here changes
+   it everywhere on the site instantly.
+   -------------------------------------------------------------------------- */
+:root {
+  /* Colour */
+  --color-bg: #FBFAF7;            /* warm paper background */
+  --color-bg-alt: #F3F1EA;        /* slightly deeper background, for alternating sections */
+  --color-surface: #FFFFFF;       /* card backgrounds */
+  --color-text: #1C1B19;          /* primary text (near-black ink) */
+  --color-text-secondary: #6B6A63;/* secondary/meta text (dates, authors, captions) */
+  --color-border: #E2E0D9;        /* hairline borders and dividers */
+  --color-accent: #24435F;        /* restrained deep ink-blue accent */
+  --color-accent-bg: #EBF0F4;     /* pale accent background, for tags/badges */
+
+  /* Typography */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.75rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
+  --space-2xl: 8rem;
+
+  /* Layout */
+  --content-width: 1080px;
+  --content-width-narrow: 720px;
+  --radius: 10px;
+
+  /* Motion */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & BASE ELEMENTS
+   A minimal reset so the site looks consistent across browsers,
+   followed by sensible defaults for basic HTML elements.
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 var(--space-sm);
+}
+
+p {
+  margin: 0 0 var(--space-sm);
+}
+
+/* Respect users who have asked their system to reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Visible focus outline for keyboard navigation (accessibility) */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   3. SKIP LINK
+   Hidden until a keyboard user tabs to it, then jumps them straight
+   to the main content — an accessibility requirement (WCAG).
+   -------------------------------------------------------------------------- */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--space-sm);
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  z-index: 100;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--space-sm);
+}
+
+/* --------------------------------------------------------------------------
+   4. SIGNATURE ELEMENT — the drawn hairline underline
+   A thin line that grows in from the left, used under nav links on
+   hover and under key headings. This recurring motion is the site's
+   visual signature — used sparingly and consistently.
+   -------------------------------------------------------------------------- */
+.underline-draw {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-draw::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+
+.underline-draw:hover::after,
+.underline-draw:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* --------------------------------------------------------------------------
+   5. HEADER & NAVIGATION
+   -------------------------------------------------------------------------- */
+.site-header {
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.site-header__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header__brand {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.site-nav__list {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.site-nav__list a {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.site-nav__list a:hover,
+.site-nav__list a[aria-current="page"] {
+  color: var(--color-text);
+  border-bottom-color: var(--color-accent);
+}
+
+/* Hamburger button — hidden on desktop, shown only on narrow screens */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle__bar {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--color-text);
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+/* --------------------------------------------------------------------------
+   6. FOOTER
+   -------------------------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-2xl);
+}
+
+.site-footer__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.social-links a {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.social-links a:hover {
+  color: var(--color-accent);
+}
+
+.site-footer__copyright {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   7. LAYOUT HELPERS
+   Reused across every page — a centred content column and consistent
+   section spacing.
+   -------------------------------------------------------------------------- */
+.container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.container--narrow {
+  max-width: var(--content-width-narrow);
+}
+
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.section--alt {
+  background: var(--color-bg-alt);
+}
+
+/* --------------------------------------------------------------------------
+   8. STANDARD PAGE HEADER
+   Used by _layouts/page.html for Research, CV, Contact, etc.
+   -------------------------------------------------------------------------- */
+.page {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.page__header {
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.page__title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+.page__subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   9. CARDS
+   The shared card style used for projects, publications, talks and
+   workshops — rounded corners, hairline border, shadow only on hover.
+   -------------------------------------------------------------------------- */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(28, 27, 25, 0.06);
+  transform: translateY(-2px);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: var(--color-accent-bg);
+  padding: 0.25rem 0.6rem;
+  border-radius: 100px;
+}
+
+/* --------------------------------------------------------------------------
+   10. BUTTONS
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-accent);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: #1a3349;
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--color-accent);
+}
+
+.btn--secondary:hover {
+  background: var(--color-accent-bg);
+}
+
+/* --------------------------------------------------------------------------
+   11. RESPONSIVE — mobile navigation
+   Below 760px, the nav collapses behind a hamburger button. This is
+   the only breakpoint most pages need; individual page templates add
+   their own where necessary.
+   -------------------------------------------------------------------------- */
+@media (max-width: 760px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-base);
+  }
+
+  .site-nav.is-open {
+    max-height: 400px;
+  }
+
+  .site-nav__list {
+    flex-direction: column;
+    gap: 0;
+    padding: var(--space-sm) var(--space-md) var(--space-md);
+  }
+
+  .site-nav__list a {
+    display: block;
+    padding: var(--space-xs) 0;
+  }
+
+  /* Turn the hamburger into an X when the menu is open */
+  .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
