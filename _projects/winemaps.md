@@ -1,13 +1,17 @@
 ---
-title: "Wine Maps"
+title: "Cognitive Maps of Flavour"
 image: ""
-summary: "One or two sentences describing what this project is about, shown on the Projects overview page."
-collaborators: "Name One, Name Two"
-funding: "Funding body or grant name"
+summary: "How is wine represented inside the human mind?"
+collaborators: "Anne-Lise Saive, Jeremie Lafraire, Zachary Mainen"
+funding: "Lyfe Fondation"
 timeline: "2024 – present"
-
 ---
 
-Write a longer description of the project here in plain Markdown paragraphs — the background, your specific contribution, methods used, and any early findings or outcomes.
+Traditional sensory science often treats wines as collections of independent descriptors—acidity, tannins, aroma intensity or fruit character. I approach flavour from a different perspective: as a structured cognitive space.
 
-Delete this file once you've added your real projects, or keep it as a reference template.
+Using behavioural experiments, inverse multidimensional scaling (iMDS), representational similarity analysis and graph theory, I investigate how individuals mentally organise wines and how these internal representations influence recognition, categorisation and decision making.
+
+Rather than asking whether two wines differ chemically, I ask how similar they are within a person's internal perceptual landscape.
+
+
+
