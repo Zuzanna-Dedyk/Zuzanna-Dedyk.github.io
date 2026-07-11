@@ -9,6 +9,7 @@
 title: "Zuzanna Dedyk"
 description: "Academic website of Zuzanna Dedyk — research, publications, talks, and projects."
 url: "https://zuzannadedyk.github.io"
+url: "https://zuzanna-dedyk.github.io"
 baseurl: ""
 
 # --- Author / contact details ---
@@ -17,12 +18,8 @@ baseurl: ""
 # in ONE place, instead of hunting through every page.
 author:
   name: "Zuzanna Dedyk"
-  email: "zuzanna.dedyk@research.fchampalimaud.org"
   institution: "Your Institution / Department"
-  google_scholar: "https://scholar.google.com/citations?hl=en&user=Qk6ankgAAAAJ"   # paste full profile URL later
-  orcid: "https://orcid.org/0000-0003-4319-1807"             # paste full ORCID URL later
   github: "zuzannadedyk"
-  linkedin: "https://www.linkedin.com/in/zuzanna-dedyk-3649b218a "
   #bluesky: ""
 
 
