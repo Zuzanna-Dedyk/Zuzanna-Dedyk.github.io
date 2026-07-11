@@ -1,28 +1,8 @@
 ---
 layout: research
 title: Research
-subtitle: An overview of my research themes and current work.
+subtitle: How do we transform sensory information into meaningful experience? Every glass of wine, every aroma and every flavour is far more than a collection of chemical compounds. Perception is an active process—shaped by the brain through memory, expectation, language, learning and attention. My research explores the cognitive architecture of flavour perception. By combining cognitive neuroscience, sensory science and computational modelling, I investigate how humans organise, interpret and remember complex sensory experiences, and how these internal representations evolve with expertise.
 ---
-
-## Research theme one
-
-A short summary of this research theme — the core question and why it matters.
-
-**Current projects:** brief mention of active projects under this theme.
-
-**Methods:** the main methods or approaches you use.
-
-**Selected outputs:** links to key papers or outputs, or point people to the [Publications](/publications/) page.
-
-## Research theme two
-
-A short summary of this research theme.
-
-**Current projects:** brief mention of active projects under this theme.
-
-**Methods:** the main methods or approaches you use.
-
-**Selected outputs:** links to key papers or outputs.
 
 <!--
   This is a minimal version — plain headings and paragraphs. In a
