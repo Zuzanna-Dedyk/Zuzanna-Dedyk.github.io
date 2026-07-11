@@ -448,3 +448,93 @@ button:focus-visible {
     transform: translateY(-7px) rotate(-45deg);
   }
 }
+
+/* --------------------------------------------------------------------------
+   12. HOME PAGE
+   Hero section, biography, research interest cards, and the connect
+   section. Only used by _layouts/home.html (i.e. only on index.md).
+   -------------------------------------------------------------------------- */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-2xl) var(--space-md) var(--space-xl);
+}
+
+.hero__portrait img,
+.hero__portrait-placeholder {
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.hero__portrait-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-bg);
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+}
+
+.hero__name {
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  margin-bottom: var(--space-xs);
+}
+
+.hero__subtitle {
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.hero__tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  margin-bottom: 0;
+}
+
+.bio-section h2 {
+  font-size: 1.5rem;
+}
+
+.bio-section p {
+  color: var(--color-text-secondary);
+}
+
+.research-interest-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: var(--space-xs);
+}
+
+.research-interest-card p {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.connect-section {
+  text-align: center;
+}
+
+.connect-section h2 {
+  font-size: 1.5rem;
+}
+
+.social-links--home {
+  justify-content: center;
+}
+
+/* Stack the hero vertically on narrow screens */
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: var(--space-xl);
+  }
+}

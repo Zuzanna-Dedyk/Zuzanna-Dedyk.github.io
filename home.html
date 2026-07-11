@@ -1,0 +1,69 @@
+---
+layout: default
+---
+<!--
+  _layouts/home.html
+  This builds the ENTIRE homepage from the data you put in index.md.
+  You should never need to edit this file — to change what appears
+  on your homepage, edit index.md instead (see the guide written
+  inside that file).
+-->
+
+<!-- ============ HERO ============ -->
+<section class="hero container">
+  <div class="hero__portrait">
+    {% if page.portrait and page.portrait != "" %}
+      <img src="{{ page.portrait | relative_url }}" alt="Portrait of {{ site.author.name }}">
+    {% else %}
+      <div class="hero__portrait-placeholder" aria-hidden="true">
+        {{ site.author.name | slice: 0, 1 }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="hero__text">
+    <h1 class="hero__name">{{ site.author.name }}</h1>
+    {% if page.hero_subtitle %}
+    <p class="hero__subtitle">{{ page.hero_subtitle }}</p>
+    {% endif %}
+    {% if page.hero_tagline %}
+    <p class="hero__tagline"><span class="underline-draw">{{ page.hero_tagline }}</span></p>
+    {% endif %}
+  </div>
+</section>
+
+<!-- ============ BIOGRAPHY ============ -->
+<!-- The paragraphs you write in index.md (below its front matter)
+     are rendered here as {{ content }}. -->
+<section class="section bio-section">
+  <div class="container container--narrow">
+    {{ content }}
+  </div>
+</section>
+
+<!-- ============ RESEARCH INTERESTS ============ -->
+{% if page.research_interests %}
+<section class="section section--alt">
+  <div class="container">
+    <h2>Research interests</h2>
+    <div class="card-grid">
+      {% for interest in page.research_interests %}
+      <div class="card research-interest-card">
+        <h3>{{ interest.title }}</h3>
+        <p>{{ interest.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ============ CONNECT ============ -->
+<section class="section">
+  <div class="container container--narrow connect-section">
+    <h2>Connect</h2>
+    <ul class="social-links social-links--home">
+      {% include social-links.html %}
+    </ul>
+  </div>
+</section>
