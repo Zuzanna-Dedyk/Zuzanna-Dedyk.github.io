@@ -1,0 +1,65 @@
+---
+layout: page
+---
+<!--
+  _layouts/events.html
+  Used only by _site_pages/events.md. Splits the page into two
+  columns (stacking on mobile):
+    - Left: Talks — pulled from _talks/, newest first. Each tile shows
+      a photo, title, and one-sentence abstract, linking to that
+      talk's own page (which has slides/recording links).
+    - Right: Workshops — pulled from _workshops/, each tile shows a
+      small strip of photos plus a short description, linking to that
+      workshop's own page.
+  To add a new talk or workshop, you never edit this file — just add
+  a new file to _talks/ or _workshops/ (see the sample files there).
+-->
+<div class="page__content">
+  {{ content }}
+</div>
+
+<div class="events-split">
+  <div class="events-column">
+    <h2>Talks</h2>
+    {% assign talks = site.talks | sort: 'date' | reverse %}
+    {% if talks.size == 0 %}
+      <p class="empty-state">Nothing here yet.</p>
+    {% else %}
+      {% for talk in talks %}
+      <a class="event-tile" href="{{ talk.url | relative_url }}">
+        {% if talk.photo and talk.photo != "" %}
+        <img class="event-tile__image" src="{{ talk.photo | relative_url }}" alt="">
+        {% endif %}
+        <div class="event-tile__body">
+          <h3>{{ talk.title }}</h3>
+          {% if talk.abstract %}<p>{{ talk.abstract }}</p>{% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    {% endif %}
+  </div>
+
+  <div class="events-column">
+    <h2>Workshops</h2>
+    {% assign workshops = site.workshops %}
+    {% if workshops.size == 0 %}
+      <p class="empty-state">Nothing here yet.</p>
+    {% else %}
+      {% for workshop in workshops %}
+      <a class="event-tile" href="{{ workshop.url | relative_url }}">
+        {% if workshop.photos and workshop.photos.size > 0 %}
+        <div class="event-tile__photo-strip">
+          {% for photo in workshop.photos limit: 3 %}
+          <img src="{{ photo | relative_url }}" alt="">
+          {% endfor %}
+        </div>
+        {% endif %}
+        <div class="event-tile__body">
+          <h3>{{ workshop.title }}</h3>
+          {% if workshop.content and workshop.content != "" %}<p>{{ workshop.content | strip_html | truncatewords: 20 }}</p>{% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>

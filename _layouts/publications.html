@@ -1,0 +1,68 @@
+---
+layout: page
+---
+<!--
+  _layouts/publications.html
+  Used only by _site_pages/publications.md. Has two sections:
+
+  1. Scientific Publications — pulled from _publications/, shown as an
+     APA-style citation list. Each citation ends with a small "•" that
+     links to the DOI. Clicking the citation text itself goes to that
+     publication's own page (abstract, PDF, BibTeX, etc).
+     Sorted newest year first, automatically.
+
+  2. Science Communication — pulled from the new _writing/ collection,
+     shown as photo tiles. Clicking a tile opens the original article
+     on its external site (e.g. Trybuszon) in a new tab. This
+     collection has "output: false" in _config.yml, meaning it's just
+     a list of data (title/photo/link) — no separate page is built for
+     each one, since the real article already lives elsewhere.
+-->
+
+<!-- ============ SCIENTIFIC PUBLICATIONS ============ -->
+<div class="section-heading">
+  <h2>Scientific publications</h2>
+</div>
+
+{% assign pubs = site.publications | sort: 'year' | reverse %}
+{% if pubs.size == 0 %}
+  <p class="empty-state">Nothing here yet.</p>
+{% else %}
+<ol class="citation-list">
+  {% for pub in pubs %}
+  <li class="citation">
+    <a class="citation__text" href="{{ pub.url | relative_url }}">
+      {{ pub.authors }} ({{ pub.year }}). {{ pub.title }}.
+      {% if pub.journal %}<em>{{ pub.journal }}</em>.{% endif %}
+    </a>
+    {% if pub.doi %}
+    <a class="citation__dot" href="{{ pub.doi }}" target="_blank" rel="noopener noreferrer" aria-label="View DOI for {{ pub.title }}" title="DOI">&#9679;</a>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ol>
+{% endif %}
+
+<!-- ============ SCIENCE COMMUNICATION ============ -->
+<div class="section-heading">
+  <h2>Science communication</h2>
+</div>
+
+{% assign pieces = site.writing | sort: 'date' | reverse %}
+{% if pieces.size == 0 %}
+  <p class="empty-state">Nothing here yet.</p>
+{% else %}
+<div class="card-grid">
+  {% for piece in pieces %}
+  <a class="tile-card" href="{{ piece.url }}" target="_blank" rel="noopener noreferrer">
+    {% if piece.photo and piece.photo != "" %}
+    <img class="tile-card__image" src="{{ piece.photo | relative_url }}" alt="">
+    {% endif %}
+    <div class="tile-card__caption">
+      <h3>{{ piece.title }}</h3>
+      {% if piece.outlet %}<p class="tile-card__outlet">{{ piece.outlet }}</p>{% endif %}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endif %}
