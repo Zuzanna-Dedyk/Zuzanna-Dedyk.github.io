@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: research
 title: Research
 subtitle: An overview of my research themes and current work.
 ---

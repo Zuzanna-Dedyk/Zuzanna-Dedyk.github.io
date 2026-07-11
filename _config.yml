@@ -54,7 +54,8 @@ collections:
   workshops:
     output: true
     permalink: /workshops/:path/
-
+  writing:
+    output: false
 # --- Defaults ---
 # Automatically applies a layout to every file in a collection so you
 # never need to type "layout: publication" inside each publication file.
