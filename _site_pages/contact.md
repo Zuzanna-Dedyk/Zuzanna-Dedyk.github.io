@@ -2,7 +2,6 @@
 layout: page
 title: Contact
 ---
-
 **Email:** [{{ site.author.email }}](mailto:{{ site.author.email }})
 ---
 {% if site.author.affiliations %}
@@ -15,6 +14,8 @@ title: Contact
 {% else %}
 **Affiliation:** {{ site.author.institution }}
 {% endif %}
+
+---
 
 <ul class="social-links social-links--home">
   {% include social-links.html %}

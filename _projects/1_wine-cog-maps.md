@@ -2,7 +2,7 @@
 title: "Cognitive Maps of Flavour"
 image: ""
 summary: "How is wine represented inside the human mind?"
-collaborators: "Anne-Lise Saive, Jeremie Lafraire, Zachary Mainen"
+collaborators: "Jeremie Lafraire, Zachary Mainen, Anne-Lise Saive"
 funding: "Lyfe Fondation"
 timeline: "2024 – present"
 ---

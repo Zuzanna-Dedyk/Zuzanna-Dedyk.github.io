@@ -1,0 +1,47 @@
+---
+layout: page
+---
+<!--
+  _layouts/publication.html
+  Individual publication page. Shows the full citation, abstract, and
+  publication metadata (DOI, BibTeX, etc).
+-->
+
+<div class="publication">
+    <!-- Citation and DOI -->
+    <div class="publication__header">
+        <div class="publication__citation">
+            <strong>{{ page.authors }}</strong> ({{ page.year }}).
+            <em>{{ page.title }}</em>.
+            {% if page.journal %}<span class="publication__journal">{{ page.journal }}</span>.{% endif %}
+        </div>
+        {% if page.doi %}
+        <a class="publication__doi" href="{{ page.doi }}" target="_blank" rel="noopener noreferrer">
+            View DOI →
+        </a>
+        {% endif %}
+    </div>
+
+    <!-- Abstract -->
+    {% if page.abstract %}
+    <section class="publication__abstract">
+        <h2>Abstract</h2>
+        <p>{{ page.abstract }}</p>
+    </section>
+    {% endif %}
+
+    <!-- Body content (if any additional notes) -->
+    {% if content.size > 0 %}
+    <section class="publication__content">
+        {{ content }}
+    </section>
+    {% endif %}
+
+    <!-- BibTeX -->
+    {% if page.citation %}
+    <section class="publication__bibtex">
+        <h2>Citation</h2>
+        <pre class="publication__bibtex-code">{{ page.citation }}</pre>
+    </section>
+    {% endif %}
+</div>
