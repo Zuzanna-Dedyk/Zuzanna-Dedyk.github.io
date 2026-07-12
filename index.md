@@ -18,7 +18,7 @@ hero_subtitle: "PhD Researcher in Cognitive Neuroscience | Sensory Science | Fla
 
 # One short, evocative sentence about what your research is about.
 # Shown in italics beneath the subtitle.
-hero_tagline: "From sensory experience to cognitive maps of flavour."
+hero_tagline: ""
 
 # Path to your photo, once you upload one to assets/images/.
 # Leave the quotes empty ("") to show a placeholder circle with
