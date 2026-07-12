@@ -11,8 +11,8 @@ permalink: /science-communication/
 {% for piece in sorted %}
   <li class="card">
     <a href="{{ piece.url | relative_url }}">
-      <div style="font-weight:600;">{{ piece.title }}</div>
-      {% if piece.date %}<div style="margin-top:0.4rem; color:var(--color-text-secondary); font-family:var(--font-mono); font-size:0.85rem;">{{ piece.date | date: "%B %Y" }}</div>{% endif %}
+      <div class="card__title">{{ piece.title }}</div>
+      {% if piece.date %}<div class="card__meta">{{ piece.date | date: "%B %Y" }}</div>{% endif %}
     </a>
   </li>
 {% endfor %}

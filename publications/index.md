@@ -11,9 +11,9 @@ permalink: /publications/
 {% for pub in sorted %}
   <li class="card">
     <a href="{{ pub.url | relative_url }}">
-      <strong>{{ pub.authors }}</strong>
-      <div style="margin-top:0.5rem;"><em>{{ pub.title }}</em></div>
-      <div style="margin-top:0.5rem; color:var(--color-text-secondary); font-family:var(--font-mono); font-size:0.85rem;">{% if pub.journal %}{{ pub.journal }}{% endif %}{% if pub.year %} · {{ pub.year }}{% endif %}</div>
+      <strong class="card__title">{{ pub.authors }}</strong>
+      <div class="card__title-sub"><em>{{ pub.title }}</em></div>
+      <div class="card__meta">{% if pub.journal %}{{ pub.journal }}{% endif %}{% if pub.year %} · {{ pub.year }}{% endif %}</div>
     </a>
   </li>
 {% endfor %}
