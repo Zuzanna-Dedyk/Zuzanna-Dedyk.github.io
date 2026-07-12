@@ -63,7 +63,8 @@ collections:
     output: true
     permalink: /workshops/:path/
   writing:
-    output: false
+    output: true
+    permalink: /science-communication/:path/
 # --- Defaults ---
 # Automatically applies a layout to every file in a collection so you
 # never need to type "layout: publication" inside each publication file.
@@ -93,6 +94,11 @@ defaults:
       type: "workshops"
     values:
       layout: "workshop"
+  - scope:
+      path: ""
+      type: "writing"
+    values:
+      layout: "page"
   - scope:
       path: ""
     values:
