@@ -26,10 +26,9 @@ author:
       url: "https://research-innovation.institutlyfe.com/who-are-us/team/zuzanna-dedyk"
     - name: "3.  Université PSL / l'École Pratique des Hautes Études / CHArt Laboratoire - Cognitions Humaine et Artificielle"
       url: "https://www.laboratoire-chart.fr"  
----
   
-  google_scholar: "https://scholar.google.com/citations?hl=en&user=Qk6ankgAAAAJ&view_op=list_works&gmla=AO4B3jtPxPOFZjlK_3TB0MMISuCeR_k319KWJzI9Zg2wWFZ9h2vh-7mZOtLpKrlNF6S-l4vbB27N-gpPWRVCFoH1"   # paste full profile URL later
-  orcid: "https://orcid.org/0000-0003-4319-1807"             # paste full ORCID URL later
+  google_scholar: "https://scholar.google.com/citations?hl=en&user=Qk6ankgAAAAJ&view_op=list_works&gmla=AO4B3jtPxPOFZjlK_3TB0MMISuCeR_k319KWJzI9Zg2wWFZ9h2vh-7mZOtLpKrlNF6S-l4vbB27N-gpPWRVCFoH1"
+  orcid: "https://orcid.org/0000-0003-4319-1807"
   linkedin: "https://www.linkedin.com/in/zuzanna-dedyk-3649b218a"
   instagram: "zuzanna.dedyk"
 
@@ -65,6 +64,7 @@ collections:
   writing:
     output: true
     permalink: /science-communication/:path/
+
 # --- Defaults ---
 # Automatically applies a layout to every file in a collection so you
 # never need to type "layout: publication" inside each publication file.
@@ -111,8 +111,6 @@ plugins:
   - jekyll-seo-tag     # generates SEO meta tags automatically
   - jekyll-sitemap     # generates sitemap.xml automatically
   - jekyll-feed        # generates an RSS feed automatically
-  plugins:
-  - jekyll-feed
 
 # --- Files Jekyll should ignore when building ---
 exclude:
