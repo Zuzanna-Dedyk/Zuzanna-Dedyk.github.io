@@ -20,12 +20,14 @@ author:
   email: "zuzanna.dedyk@research.fchampalimaud.org"
   institution: "Champalimaud Foundation / Systems Neuroscience Lab"
   affiliations:
-    - name: "Champalimaud Foundation / Systems Neuroscience Lab"
+    - name: "1.  Champalimaud Foundation / Systems Neuroscience Lab"
       url: "https://mainenlab.org"
-    - name: "Lyfe Institut / Reseaerch and Innovation Centre"
+    - name: "2.  Lyfe Institut / Reseaerch and Innovation Centre"
       url: "https://research-innovation.institutlyfe.com/who-are-us/team/zuzanna-dedyk"
-    - name: "Université PSL / l'École Pratique des Hautes Études / CHArt Laboratoire - Cognitions Humaine et Artificielle"
-      url: "https://www.laboratoire-chart.fr"
+    - name: "3.  Université PSL / l'École Pratique des Hautes Études / CHArt Laboratoire - Cognitions Humaine et Artificielle"
+      url: "https://www.laboratoire-chart.fr"  
+---
+  
   google_scholar: "https://scholar.google.com/citations?hl=en&user=Qk6ankgAAAAJ&view_op=list_works&gmla=AO4B3jtPxPOFZjlK_3TB0MMISuCeR_k319KWJzI9Zg2wWFZ9h2vh-7mZOtLpKrlNF6S-l4vbB27N-gpPWRVCFoH1"   # paste full profile URL later
   orcid: "https://orcid.org/0000-0003-4319-1807"             # paste full ORCID URL later
   linkedin: "https://www.linkedin.com/in/zuzanna-dedyk-3649b218a"
