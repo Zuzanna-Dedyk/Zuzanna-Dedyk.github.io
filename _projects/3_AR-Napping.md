@@ -1,6 +1,6 @@
 ---
 title: "AR Napping Table"
-image: ""
+image: "assets/images/purplebrown-rhotho-background-.png"
 summary: "An AR sensory mapping tool validation."
 collaborators: "Jessica Ouedraogo, Mathieu Zenman, Guillaume Lavoué, Anne-Lise Saive"
 timeline: "2026 – present"
