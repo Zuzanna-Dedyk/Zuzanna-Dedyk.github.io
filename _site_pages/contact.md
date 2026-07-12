@@ -1,22 +1,12 @@
 ---
-layout: page
+layout: contact
 title: Contact
+description: "Get in touch with Zuzanna Dedyk — email, academic affiliations, and social profiles."
+affiliations:
+  - name: "Champalimaud Foundation — Systems Neuroscience Lab"
+    url: "https://mainenlab.org"
+  - name: "Institut Lyfe — Research and Innovation Centre"
+    url: "https://research-innovation.institutlyfe.com/who-are-us/team/zuzanna-dedyk"
+  - name: "Université PSL — École Pratique des Hautes Études, CHArt Laboratoire (Cognitions Humaine et Artificielle)"
+    url: "https://www.laboratoire-chart.fr"
 ---
-**Email:** [{{ site.author.email }}](mailto:{{ site.author.email }})
----
-{% if site.author.affiliations %}
-**Affiliations:**
-<ul class="author-affiliations">
-  {% for affiliation in site.author.affiliations %}
-    <li><a href="{{ affiliation.url }}" target="_blank" rel="noopener noreferrer">{{ affiliation.name }}</a></li>
-  {% endfor %}
-</ul>
-{% else %}
-**Affiliation:** {{ site.author.institution }}
-{% endif %}
-
----
-
-<ul class="social-links social-links--home">
-  {% include social-links.html %}
-</ul>

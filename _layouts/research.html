@@ -34,10 +34,11 @@ layout: page
     {% assign plane = planes[plane_index] %}
     {% assign room_number = forloop.index | prepend: "00" | slice: -2, 2 %}
 
-    {% if project.image and project.image != "" %}
+    {% assign cover = project.cover_image | default: project.image %}
+    {% if cover and cover != "" %}
     <a class="gallery-room gallery-room--photo" href="{{ project.url | relative_url }}">
       <div class="gallery-room__media">
-        <img src="{{ project.image | relative_url }}" alt="">
+        <img src="{{ cover | relative_url }}" alt="">
       </div>
       <div class="gallery-room__text gallery-room__text--overlay gallery-room__text--scrim">
         <span class="gallery-room__index">Room {{ room_number }}</span>

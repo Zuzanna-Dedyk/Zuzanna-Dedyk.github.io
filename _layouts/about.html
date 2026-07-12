@@ -1,0 +1,49 @@
+---
+layout: page
+---
+<!--
+  _layouts/about.html
+  Used only by _site_pages/about.md. A large portrait sits beside
+  your narrative text, and — if you add one — a vertical timeline of
+  positions/education renders below it.
+
+  You should never need to edit this file — edit about.md instead.
+  Front matter fields used here: portrait, image_alt, timeline.
+  The Markdown content below about.md's front matter is your full
+  narrative — this is the place for the longer story that doesn't fit
+  on the one-screen Home page. Write a blockquote (a line starting
+  with ">") anywhere in it for an editorial pull-quote.
+-->
+<div class="about-intro">
+  <div class="about-intro__media">
+    {% if page.portrait and page.portrait != "" %}
+      <img src="{{ page.portrait | relative_url }}" alt="{{ page.image_alt | default: site.author.name }}">
+    {% else %}
+      <div class="about-intro__media-placeholder" aria-hidden="true">
+        {{ site.author.name | slice: 0, 1 }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="about-intro__text page__content">
+    {{ content }}
+  </div>
+</div>
+
+{% if page.timeline %}
+<div class="section-heading">
+  <h2>Timeline</h2>
+</div>
+
+<ol class="timeline">
+  {% for item in page.timeline %}
+  <li class="timeline__item">
+    <span class="timeline__year">{{ item.year }}</span>
+    <div class="timeline__body">
+      <h3>{{ item.title }}</h3>
+      {% if item.place %}<p>{{ item.place }}</p>{% endif %}
+    </div>
+  </li>
+  {% endfor %}
+</ol>
+{% endif %}

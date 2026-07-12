@@ -3,93 +3,101 @@ layout: page
 ---
 <!--
   _layouts/events.html
-  Used only by _site_pages/events.md.
-  Lists workshops first and talks second, using the same square
-  gallery tile layout as the research page.
+  Used only by _site_pages/events.md. Reuses the exact same square
+  "gallery tile" design as the Research page (.research-gallery /
+  .gallery-room classes — no new CSS needed, they're shared).
+
+  Two stacked sections:
+    - Workshops (top) — pulled from _workshops/. Each tile's photo is
+      the first image in that workshop's "photos:" list. Clicking a
+      tile opens the workshop's full page, which shows the
+      description plus all its photos.
+    - Talks (bottom) — pulled from _talks/, newest first. Each tile
+      uses the talk's "photo:" field. Clicking a tile opens that
+      talk's full page (abstract, slides, recording).
+
+  To add a new talk or workshop, you never edit this file — just add
+  a new file to _talks/ or _workshops/ (see the sample files there).
 -->
 <div class="page__content">
   {{ content }}
 </div>
 
+<!-- ============ WORKSHOPS ============ -->
 <div class="section-heading">
   <h2>Workshops</h2>
 </div>
+
 {% assign workshops = site.workshops %}
 {% if workshops.size == 0 %}
-<p class="empty-state">Nothing here yet.</p>
+  <p class="empty-state">Nothing here yet.</p>
 {% else %}
-<div class="research-gallery workshops-gallery">
+<div class="research-gallery">
   {% assign planes = "wine,plum,charcoal" | split: "," %}
   {% for workshop in workshops %}
-  {% assign plane_index = forloop.index0 | modulo: 3 %}
-  {% assign plane = planes[plane_index] %}
-  {% assign room_number = forloop.index | prepend: "00" | slice: -2, 2 %}
-  {% assign workshop_photo = workshop.photos | first %}
-
-  {% if workshop_photo and workshop_photo != "" %}
-  <a class="gallery-room gallery-room--photo" href="{{ workshop.url | relative_url }}">
-    <div class="gallery-room__media">
-      <img src="{{ workshop_photo | relative_url }}" alt="{{ workshop.title }}">
-    </div>
-    <div class="gallery-room__text gallery-room__text--overlay gallery-room__text--scrim">
-      <span class="gallery-room__index">Workshop {{ room_number }}</span>
-      <h3>{{ workshop.title }}</h3>
-      {% if workshop.audience %}<span class="tag tag--on-plane">{{ workshop.audience }}</span>{% endif %}
-      <span class="gallery-room__cta">View workshop &rarr;</span>
-    </div>
-  </a>
-  {% else %}
-  <a class="gallery-room gallery-room--plane gallery-room--{{ plane }}" href="{{ workshop.url | relative_url }}">
-    <div class="gallery-room__text gallery-room__text--overlay">
-      <span class="gallery-room__index">Workshop {{ room_number }}</span>
-      <h3>{{ workshop.title }}</h3>
-      {% if workshop.audience %}<span class="tag tag--on-plane">{{ workshop.audience }}</span>{% endif %}
-      <span class="gallery-room__cta">View workshop &rarr;</span>
-    </div>
-  </a>
-  {% endif %}
+    {% assign plane_index = forloop.index0 | modulo: 3 %}
+    {% assign plane = planes[plane_index] %}
+    {% assign cover = workshop.cover_image | default: workshop.photos[0] %}
+    {% if cover and cover != "" %}
+    <a class="gallery-room gallery-room--photo" href="{{ workshop.url | relative_url }}">
+      <div class="gallery-room__media">
+        <img src="{{ cover | relative_url }}" alt="">
+      </div>
+      <div class="gallery-room__text gallery-room__text--overlay gallery-room__text--scrim">
+        {% if workshop.location %}<span class="gallery-room__index">{{ workshop.location }}</span>{% endif %}
+        <h3>{{ workshop.title }}</h3>
+        <span class="gallery-room__cta">View workshop &rarr;</span>
+      </div>
+    </a>
+    {% else %}
+    <a class="gallery-room gallery-room--plane gallery-room--{{ plane }}" href="{{ workshop.url | relative_url }}">
+      <div class="gallery-room__text gallery-room__text--overlay">
+        {% if workshop.location %}<span class="gallery-room__index">{{ workshop.location }}</span>{% endif %}
+        <h3>{{ workshop.title }}</h3>
+        <span class="gallery-room__cta">View workshop &rarr;</span>
+      </div>
+    </a>
+    {% endif %}
   {% endfor %}
 </div>
 {% endif %}
 
+<!-- ============ TALKS ============ -->
 <div class="section-heading">
   <h2>Talks</h2>
 </div>
+
 {% assign talks = site.talks | sort: 'date' | reverse %}
 {% if talks.size == 0 %}
-<p class="empty-state">Nothing here yet.</p>
+  <p class="empty-state">Nothing here yet.</p>
 {% else %}
-<div class="research-gallery talks-gallery">
+<div class="research-gallery">
   {% assign planes = "wine,plum,charcoal" | split: "," %}
   {% for talk in talks %}
-  {% assign plane_index = forloop.index0 | modulo: 3 %}
-  {% assign plane = planes[plane_index] %}
-  {% assign room_number = forloop.index | prepend: "00" | slice: -2, 2 %}
+    {% assign plane_index = forloop.index0 | modulo: 3 %}
+    {% assign plane = planes[plane_index] %}
 
-  {% if talk.photo and talk.photo != "" %}
-  <a class="gallery-room gallery-room--photo" href="{{ talk.url | relative_url }}">
-    <div class="gallery-room__media">
-      <img src="{{ talk.photo | relative_url }}" alt="{{ talk.title }}">
-    </div>
-    <div class="gallery-room__text gallery-room__text--overlay gallery-room__text--scrim">
-      <span class="gallery-room__index">Talk {{ room_number }}</span>
-      <h3>{{ talk.title }}</h3>
-      {% if talk.abstract %}<span class="tag tag--on-plane">{{ talk.abstract | strip_html | truncatewords: 10
-        }}</span>{% endif %}
-      <span class="gallery-room__cta">View talk &rarr;</span>
-    </div>
-  </a>
-  {% else %}
-  <a class="gallery-room gallery-room--plane gallery-room--{{ plane }}" href="{{ talk.url | relative_url }}">
-    <div class="gallery-room__text gallery-room__text--overlay">
-      <span class="gallery-room__index">Talk {{ room_number }}</span>
-      <h3>{{ talk.title }}</h3>
-      {% if talk.abstract %}<span class="tag tag--on-plane">{{ talk.abstract | strip_html | truncatewords: 10
-        }}</span>{% endif %}
-      <span class="gallery-room__cta">View talk &rarr;</span>
-    </div>
-  </a>
-  {% endif %}
+    {% assign cover = talk.cover_image | default: talk.photo %}
+    {% if cover and cover != "" %}
+    <a class="gallery-room gallery-room--photo" href="{{ talk.url | relative_url }}">
+      <div class="gallery-room__media">
+        <img src="{{ cover | relative_url }}" alt="">
+      </div>
+      <div class="gallery-room__text gallery-room__text--overlay gallery-room__text--scrim">
+        {% if talk.conference %}<span class="gallery-room__index">{{ talk.conference }}</span>{% endif %}
+        <h3>{{ talk.title }}</h3>
+        <span class="gallery-room__cta">View talk &rarr;</span>
+      </div>
+    </a>
+    {% else %}
+    <a class="gallery-room gallery-room--plane gallery-room--{{ plane }}" href="{{ talk.url | relative_url }}">
+      <div class="gallery-room__text gallery-room__text--overlay">
+        {% if talk.conference %}<span class="gallery-room__index">{{ talk.conference }}</span>{% endif %}
+        <h3>{{ talk.title }}</h3>
+        <span class="gallery-room__cta">View talk &rarr;</span>
+      </div>
+    </a>
+    {% endif %}
   {% endfor %}
 </div>
 {% endif %}

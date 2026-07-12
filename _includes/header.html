@@ -11,8 +11,13 @@
       {{ site.author.name }}
     </a>
 
-    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav"
-      aria-label="Open navigation menu">
+    <button
+      class="nav-toggle"
+      id="nav-toggle"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="Open navigation menu"
+    >
       <span class="nav-toggle__bar"></span>
       <span class="nav-toggle__bar"></span>
       <span class="nav-toggle__bar"></span>
@@ -20,17 +25,12 @@
 
     <nav class="site-nav" id="site-nav" aria-label="Main navigation">
       <ul class="site-nav__list">
-        <li><a href="{{ '/' | relative_url }}" {% if page.url=='/' %}aria-current="page" {% endif %}>Home</a></li>
-        <li><a href="{{ '/research/' | relative_url }}" {% if page.url=='/research/' %}aria-current="page" {% endif
-            %}>Research</a></li>
-        <li><a href="{{ '/publications/' | relative_url }}" {% if page.url=='/publications/' %}aria-current="page" {%
-            endif %}>Publications</a></li>
-        <li><a href="{{ '/events/' | relative_url }}" {% if page.url=='/events/' %}aria-current="page" {% endif
-            %}>Events</a></li>
-        <li><a href="{{ '/contact/' | relative_url }}" {% if page.url=='/contact/' %}aria-current="page" {% endif
-            %}>Contact</a></li>
-      </ul>
-
+        <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a></li>
+        <li><a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>About</a></li>
+        <li><a href="{{ '/research/' | relative_url }}" {% if page.url == '/research/' %}aria-current="page"{% endif %}>Research</a></li>
+        <li><a href="{{ '/publications/' | relative_url }}" {% if page.url == '/publications/' %}aria-current="page"{% endif %}>Publications</a></li>
+        <li><a href="{{ '/events/' | relative_url }}" {% if page.url == '/events/' %}aria-current="page"{% endif %}>Events</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}aria-current="page"{% endif %}>Contact</a></li>
       </ul>
     </nav>
   </div>
