@@ -32,12 +32,11 @@ portrait: ""
 # pattern for each one. Aim for 3-6 for a clean grid.
 # --------------------------------------------------------------
 research_interests:
-  - title: "Flavour Perception & Cognitive Maps"
-    description: "Investigating how the brain integrates smell, taste, vision and context to construct the experience of flavour. Using behavioural experiments and computational methods to understand how said flavours are represented in the brain."
+  - title: "Flavour Perception"
+  - title: "Cognitive Maps"
   - title: "Sensory Expertise"
-    description: "Studying how training shapes perception, memory and decision-making in wine, coffee and other expert sensory domains."
   - title: "Wine & Coffee Science"
-    description: "Applying cognitive neuroscience to real-world sensory evaluation, education and product experience."
+  
 ---
 
 <!--
@@ -48,10 +47,11 @@ research_interests:
   background/affiliation.
 -->
 
-I am a PhD researcher in cognitive neuroscience exploring how the brain constructs, represents and remembers flavour. My research investigates how sensory experiences are transformed into meaningful mental representations, and how expertise reshapes these processes through learning and experience. Using wine and coffee as model systems, I combine behavioural experiments, computational approaches and sensory science to better understand the cognitive mechanisms underlying flavour perception.
+I am a PhD researcher in cognitive neuroscience studying how the brain constructs, represents, and remembers flavour. My research explores how sensory experiences become meaningful mental representations, and how learning and expertise shape these processes. Using wine and coffee as model systems, I combine behavioural experiments, computational approaches, and sensory science to research  the cognitive mechanisms behind flavour perception.
 
-My work lies at the intersection of cognitive neuroscience and sensory science. I am interested in how flavours are organised into cognitive maps that support perception, memory, categorisation and decision-making, and in how these representations evolve as expertise develops. By studying expert tasters alongside novices, I aim to investigate the cognitive principles that underlie human sensory expertise.
+My work sits at the intersection of cognitive neuroscience and sensory science. I am interested in how flavours are organised into cognitive maps that support perception, memory, categorisation, and decision-making, and how these representations change as expertise develops.
 
-Beyond research, I work closely with the wine and specialty coffee communities to bridge scientific research with professional practice. As an international specialty coffee judge and educator, I contribute to sensory evaluation, competition judging and professional training, while collaborating with industry partners to translate cognitive science into practical applications. I am also committed to science communication and interdisciplinary collaborations that connect academic research with the worlds of coffee and wine.
+Beyond research, I work closely with the wine and specialty coffee communities to connect science with professional practice. As an international specialty coffee judge and educator, I contribute to sensory evaluation, competition judging, and professional training, while also supporting science communication and interdisciplinary collaboration.
+
 
 

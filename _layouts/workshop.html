@@ -26,10 +26,14 @@ layout: default
     {{ content }}
   </div>
 
-  {% if page.photos %}
-  <div class="item-page__photo-grid">
+  {% if page.photos and page.photos.size > 0 %}
+  <div class="research-gallery workshop-photo-gallery">
     {% for photo in page.photos %}
-    <img src="{{ photo | relative_url }}" alt="">
+    <div class="gallery-room gallery-room--photo">
+      <div class="gallery-room__media">
+        <img src="{{ photo | relative_url }}" alt="Workshop photo {{ forloop.index }}">
+      </div>
+    </div>
     {% endfor %}
   </div>
   {% endif %}

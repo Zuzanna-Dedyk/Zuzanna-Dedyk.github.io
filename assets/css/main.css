@@ -769,6 +769,21 @@ a.card {
   letter-spacing: -0.02em;
 }
 
+.section-subtitle {
+  margin-top: var(--space-2xs);
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.workshops-gallery {
+  margin-top: var(--space-lg);
+}
+
+.talks-gallery {
+  margin-top: calc(var(--space-2xl) + var(--space-lg));
+}
+
 .item-card__image {
   width: calc(100% + (var(--space-md) * 2));
   height: 200px;
