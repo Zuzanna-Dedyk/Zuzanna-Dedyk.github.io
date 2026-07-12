@@ -4,7 +4,7 @@ organiser: "Champalimaud Foundation Annual Research Retreat"
 role: "Facilitator"
 location: "Portugal"
 audience: "Researchers"
-cover_image: ""
+cover_image: "assets/images/pink-Rothko-backgrounf.png"
 feature_image: ""
 image_alt: ""
 photos: []

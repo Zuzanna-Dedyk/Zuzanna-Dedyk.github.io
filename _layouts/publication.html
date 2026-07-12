@@ -12,7 +12,8 @@ layout: default
 
   <header class="page__header">
     <h1 class="page__title">{{ page.title }}</h1>
-    <p class="page__subtitle">{% if page.journal %}{{ page.journal }}{% endif %}{% if page.year %} · {{ page.year }}{% endif %}</p>
+    <p class="page__subtitle">{% if page.journal %}{{ page.journal }}{% endif %}{% if page.year %} · {{ page.year }}{%
+      endif %}</p>
   </header>
 
   {% assign feature = page.feature_image | default: page.image | default: page.photos[0] %}
@@ -20,15 +21,16 @@ layout: default
   <div class="item-page__split">
     <div class="item-page__media" aria-hidden="false">
       {% if feature and feature != "" %}
-        <img class="item-page__media-img" src="{{ feature | relative_url }}" alt="{{ page.image_alt | default: page.title }}">
+      <img class="item-page__media-img" src="{{ feature | relative_url }}"
+        alt="{{ page.image_alt | default: page.title }}">
       {% endif %}
 
       {% if page.photos %}
-        <div class="item-page__photo-grid">
-          {% for p in page.photos %}
-            <img src="{{ p | relative_url }}" alt="">
-          {% endfor %}
-        </div>
+      <div class="item-page__photo-grid">
+        {% for p in page.photos %}
+        <img src="{{ p | relative_url }}" alt="">
+        {% endfor %}
+      </div>
       {% endif %}
     </div>
 
@@ -40,7 +42,7 @@ layout: default
         </div>
 
         {% if page.doi %}
-          <p><strong>DOI:</strong> <a href="{{ page.doi }}" target="_blank" rel="noopener noreferrer">View DOI</a></p>
+        <p><strong>DOI:</strong> <a href="{{ page.doi }}" target="_blank" rel="noopener noreferrer">View DOI</a></p>
         {% endif %}
       </div>
 
@@ -57,12 +59,7 @@ layout: default
       </section>
       {% endif %}
 
-      {% if page.citation %}
-      <section class="publication__bibtex">
-        <h2>Citation</h2>
-        <pre class="publication__bibtex-code">{{ page.citation }}</pre>
-      </section>
-      {% endif %}
+
     </div>
   </div>
 </article>
