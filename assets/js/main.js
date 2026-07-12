@@ -65,4 +65,27 @@ document.addEventListener('DOMContentLoaded', function () {
       observer.observe(el);
     });
   }
+
+  // ------------------------------------------------------------------
+  // Slight parallax on the Hero's colour plane — the wine-coloured
+  // background drifts a little slower than the page as you scroll,
+  // for a quiet cinematic depth. Purely additive: if this doesn't
+  // run, the plane is simply static, which looks fine on its own.
+  // ------------------------------------------------------------------
+  var hero = document.querySelector('.hero');
+
+  if (hero && !prefersReducedMotion) {
+    var ticking = false;
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(function () {
+          var offset = Math.min(window.scrollY * 0.15, 60);
+          hero.style.setProperty('--hero-parallax', offset + 'px');
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
 });
