@@ -85,12 +85,25 @@
   border-color: var(--color-accent);
 }
 
+/* Body column internal padding to prevent content touching edges */
 .item-page__body {
-  /* keep the content column full width within its column */
+  padding-left: var(--space-sm);
+  padding-right: var(--space-sm);
 }
 
+/* Allow page content to use full column but keep readable line length
+   for publications specifically so abstracts don't stretch edge-to-edge */
 .item-page__body .page__content {
   max-width: 100%; /* override the site-wide 640px narrow cap for item pages */
+}
+
+/* Publication-specific readability constraints */
+.publication-page .page__content,
+.publication__abstract,
+.publication__abstract p,
+.publication__content,
+.publication__meta {
+  max-width: 720px; /* keep abstracts and citation bodies readable */
 }
 
 /* Carousel controls (overlay) */
@@ -141,5 +154,12 @@
 
   .item-page__photo-grid img {
     height: 60px;
+  }
+
+  /* Ensure publication content remains readable on small screens */
+  .publication-page .page__content,
+  .publication__abstract,
+  .publication__content {
+    max-width: 100%;
   }
 }
