@@ -17,8 +17,5 @@ url: "https://coffeebreakmagazine.com/science-coffee-perception"
 
 <!-- Add your article summary or excerpt here -->
 
-### Read the full article
-[Read on Coffee Break Magazine →](https://coffeebreakmagazine.com/science-coffee-perception)
-
 <!-- Optional: Link to PDF if you have one -->
 <!-- [Download PDF](assets/pdf/science-coffee-perception.pdf) -->
