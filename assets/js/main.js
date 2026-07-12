@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (!prefersReducedMotion && 'IntersectionObserver' in window) {
-    var revealTargets = document.querySelectorAll('.card, .tile-card, .event-tile, .item-page__image');
+    var revealTargets = document.querySelectorAll('.card, .tile-card, .event-tile, .item-page__image, .gallery-room');
 
     revealTargets.forEach(function (el) {
       el.style.opacity = '0';

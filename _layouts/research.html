@@ -5,10 +5,18 @@ layout: page
   _layouts/research.html
   Used only by _site_pages/research.md.
   Renders your overview text first (whatever you write in research.md),
-  then automatically lists every item in the _projects/ collection as
-  tiles underneath. To add a new project tile, you never touch this
-  file — just add a new file to _projects/ (see _projects/sample-project.md
-  for the pattern) and it appears here automatically.
+  then lists every item in _projects/ as a large "gallery room" —
+  alternating left/right down the page, like walking through an
+  exhibition. Clicking anywhere in a room opens that project's full
+  page (built from _layouts/project.html).
+
+  To add a new project, you never touch this file — just add a new
+  file to _projects/ (see _projects/sample-project.md for the exact
+  fields available: title, image, summary, timeline, etc). If a
+  project has no "image" set yet, its room automatically becomes a
+  solid colour field instead of an empty box, cycling through the
+  site's wine / plum / charcoal palette — so the page still looks
+  intentional before you've uploaded real photography.
 -->
 <div class="page__content">
   {{ content }}
@@ -18,16 +26,38 @@ layout: page
 <div class="section-heading">
   <h2>Projects</h2>
 </div>
-<div class="card-grid">
+
+<div class="research-gallery">
+  {% assign planes = "wine,plum,charcoal" | split: "," %}
   {% for project in site.projects %}
-  <a class="card item-card" href="{{ project.url | relative_url }}">
+    {% assign plane_index = forloop.index0 | modulo: 3 %}
+    {% assign plane = planes[plane_index] %}
+    {% assign room_number = forloop.index | prepend: "00" | slice: -2, 2 %}
+
     {% if project.image and project.image != "" %}
-    <img class="item-card__image" src="{{ project.image | relative_url }}" alt="">
+    <a class="gallery-room gallery-room--photo {% cycle 'gallery-room--forward', 'gallery-room--reverse' %}" href="{{ project.url | relative_url }}">
+      <div class="gallery-room__media">
+        <img src="{{ project.image | relative_url }}" alt="">
+      </div>
+      <div class="gallery-room__text">
+        <span class="gallery-room__index">Room {{ room_number }}</span>
+        <h3>{{ project.title }}</h3>
+        {% if project.summary %}<p>{{ project.summary }}</p>{% endif %}
+        {% if project.timeline %}<span class="tag">{{ project.timeline }}</span>{% endif %}
+        <span class="gallery-room__cta">View project &rarr;</span>
+      </div>
+    </a>
+    {% else %}
+    <a class="gallery-room gallery-room--plane gallery-room--{{ plane }} {% cycle 'gallery-room--forward', 'gallery-room--reverse' %}" href="{{ project.url | relative_url }}">
+      <div class="gallery-room__text gallery-room__text--overlay">
+        <span class="gallery-room__index">Room {{ room_number }}</span>
+        <h3>{{ project.title }}</h3>
+        {% if project.summary %}<p>{{ project.summary }}</p>{% endif %}
+        {% if project.timeline %}<span class="tag tag--on-plane">{{ project.timeline }}</span>{% endif %}
+        <span class="gallery-room__cta">View project &rarr;</span>
+      </div>
+    </a>
     {% endif %}
-    <h3>{{ project.title }}</h3>
-    {% if project.summary %}<p>{{ project.summary }}</p>{% endif %}
-    {% if project.timeline %}<span class="tag">{{ project.timeline }}</span>{% endif %}
-  </a>
   {% endfor %}
 </div>
 {% endif %}
