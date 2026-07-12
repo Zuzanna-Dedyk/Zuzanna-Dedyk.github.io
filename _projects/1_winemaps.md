@@ -12,6 +12,3 @@ Traditional sensory science often treats wines as collections of independent des
 Using behavioural experiments, inverse multidimensional scaling (iMDS), representational similarity analysis and graph theory, I investigate how individuals mentally organise wines and how these internal representations influence recognition, categorisation and decision making.
 
 Rather than asking whether two wines differ chemically, I ask how similar they are within a person's internal perceptual landscape.
-
-
-

@@ -3,57 +3,50 @@ layout: default
 ---
 <!--
   _layouts/home.html
-  This builds the ENTIRE homepage from the data you put in index.md.
-  You should never need to edit this file — to change what appears
-  on your homepage, edit index.md instead (see the guide written
-  inside that file).
+  A single-screen split layout: your photo fills the left half, and
+  your name / role / short bio / research interests sit on the right.
+  Designed to fit in roughly one viewport — no long scroll.
+
+  You should never need to edit this file — edit index.md instead.
+  Front matter fields used here: portrait, hero_subtitle (your role/
+  title line), research_interests. The Markdown content below
+  index.md's front matter is your bio — keep it SHORT (2-3 sentences)
+  so it fits the one-screen design; the full story belongs on the
+  Research page instead.
 -->
-
-<!-- ============ HERO ============ -->
-<section class="hero container">
-  <div class="hero__portrait">
+<section class="home-hero">
+  <div class="home-hero__media">
     {% if page.portrait and page.portrait != "" %}
-    <img src="{{ page.portrait | relative_url }}" alt="Portrait of {{ site.author.name }}">
+      <img src="{{ page.portrait | relative_url }}" alt="Portrait of {{ site.author.name }}">
     {% else %}
-    <div class="hero__portrait-placeholder" aria-hidden="true">
-      {{ site.author.name | slice: 0, 1 }}
-    </div>
-    {% endif %}
-  </div>
-
-  <div class="hero__text">
-    <h1 class="hero__name">{{ site.author.name }}</h1>
-    {% if page.hero_subtitle %}
-    <p class="hero__subtitle">{{ page.hero_subtitle }}</p>
-    {% endif %}
-    {% if page.hero_tagline %}
-    <p class="hero__tagline"><span class="underline-draw">{{ page.hero_tagline }}</span></p>
-    {% endif %}
-  </div>
-</section>
-
-<!-- ============ BIOGRAPHY ============ -->
-<!-- The paragraphs you write in index.md (below its front matter)
-     are rendered here as {{ content }}. -->
-<section class="section bio-section">
-  <div class="container container--narrow">
-    {{ content }}
-  </div>
-</section>
-
-<!-- ============ RESEARCH INTERESTS ============ -->
-{% if page.research_interests %}
-<section class="section section--alt">
-  <div class="container">
-    <h2>Research interests</h2>
-    <div class="card-grid">
-      {% for interest in page.research_interests %}
-      <div class="card research-interest-card">
-        <h3>{{ interest.title }}</h3>
-        <p>{{ interest.description }}</p>
+      <div class="home-hero__media-placeholder" aria-hidden="true">
+        {{ site.author.name | slice: 0, 1 }}
       </div>
-      {% endfor %}
+    {% endif %}
+  </div>
+
+  <div class="home-hero__content">
+    <h1 class="home-hero__name">{{ site.author.name }}</h1>
+
+    {% if page.hero_subtitle %}
+    <p class="home-hero__role">{{ page.hero_subtitle }}</p>
+    {% endif %}
+
+    <div class="home-hero__bio">
+      {{ content }}
     </div>
+
+    {% if page.research_interests %}
+    <div class="home-hero__interests">
+      <span class="home-hero__interests-label">Research interests</span>
+      <ul class="home-hero__interests-list">
+        {% for interest in page.research_interests %}
+        <li>{{ interest.title }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    <a class="home-hero__cta underline-draw" href="{{ '/research/' | relative_url }}">View research &rarr;</a>
   </div>
 </section>
-{% endif %}

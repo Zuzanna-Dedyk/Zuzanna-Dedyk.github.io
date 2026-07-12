@@ -5,17 +5,17 @@ layout: page
   _layouts/research.html
   Used only by _site_pages/research.md.
   Renders your overview text first (whatever you write in research.md),
-  then lists every item in _projects/ as a large "gallery room" —
-  alternating left/right down the page, like walking through an
-  exhibition. Clicking anywhere in a room opens that project's full
-  page (built from _layouts/project.html).
+  then lists every item in _projects/ as a 3-across grid of square
+  tiles — the project's photo as a full-tile background, with the
+  title overlaid at the bottom. Clicking a tile opens that project's
+  full page (built from _layouts/project.html).
 
   To add a new project, you never touch this file — just add a new
   file to _projects/ (see _projects/sample-project.md for the exact
   fields available: title, image, summary, timeline, etc). If a
-  project has no "image" set yet, its room automatically becomes a
+  project has no "image" set yet, its tile automatically becomes a
   solid colour field instead of an empty box, cycling through the
-  site's wine / plum / charcoal palette — so the page still looks
+  site's wine / plum / charcoal palette — so the grid still looks
   intentional before you've uploaded real photography.
 -->
 <div class="page__content">
@@ -35,24 +35,22 @@ layout: page
     {% assign room_number = forloop.index | prepend: "00" | slice: -2, 2 %}
 
     {% if project.image and project.image != "" %}
-    <a class="gallery-room gallery-room--photo {% cycle 'gallery-room--forward', 'gallery-room--reverse' %}" href="{{ project.url | relative_url }}">
+    <a class="gallery-room gallery-room--photo" href="{{ project.url | relative_url }}">
       <div class="gallery-room__media">
         <img src="{{ project.image | relative_url }}" alt="">
       </div>
-      <div class="gallery-room__text">
+      <div class="gallery-room__text gallery-room__text--overlay gallery-room__text--scrim">
         <span class="gallery-room__index">Room {{ room_number }}</span>
         <h3>{{ project.title }}</h3>
-        {% if project.summary %}<p>{{ project.summary }}</p>{% endif %}
-        {% if project.timeline %}<span class="tag">{{ project.timeline }}</span>{% endif %}
+        {% if project.timeline %}<span class="tag tag--on-plane">{{ project.timeline }}</span>{% endif %}
         <span class="gallery-room__cta">View project &rarr;</span>
       </div>
     </a>
     {% else %}
-    <a class="gallery-room gallery-room--plane gallery-room--{{ plane }} {% cycle 'gallery-room--forward', 'gallery-room--reverse' %}" href="{{ project.url | relative_url }}">
+    <a class="gallery-room gallery-room--plane gallery-room--{{ plane }}" href="{{ project.url | relative_url }}">
       <div class="gallery-room__text gallery-room__text--overlay">
         <span class="gallery-room__index">Room {{ room_number }}</span>
         <h3>{{ project.title }}</h3>
-        {% if project.summary %}<p>{{ project.summary }}</p>{% endif %}
         {% if project.timeline %}<span class="tag tag--on-plane">{{ project.timeline }}</span>{% endif %}
         <span class="gallery-room__cta">View project &rarr;</span>
       </div>
