@@ -12,14 +12,17 @@ image_alt: "Portrait of Zuzanna Dedyk"
 # --------------------------------------------------------------
 timeline:
   - year: "2024 – present"
-    title: "PhD Researcher"
-    place: "Champalimaud Foundation, Systems Neuroscience Lab"
-  - year: "2022 – 2024"
-    title: "Research position or degree"
-    place: "Institution name"
-  - year: "2020 – 2022"
-    title: "Earlier position or degree"
-    place: "Institution name"
+    title: "PhD in Neuroscience"
+    place: "Champalimaud Foundation · Université PSL (EPHE) · Institut Lyfe"
+  - year: "2023 – 2024"
+    title: "Research Technician, Systems Neuroscience Laboratory"
+    place: "Champalimaud Research"
+  - year: "2021 – 2023"
+    title: "MRes in Cognitive Neuroscience"
+    place: "Radboud University — Donders Institute for Brain, Behaviour and Cognition"
+  - year: "2017 – 2020"
+    title: "BSc in Mathematics and Natural Sciences, Neurobiology Specialisation"
+    place: "Jagiellonian University, Kraków"
 ---
 
 <!--
@@ -38,10 +41,8 @@ timeline:
   It will render as a large, set-apart quote automatically.
 -->
 
-I did not begin in a laboratory. My path into cognitive neuroscience started with a simpler question, asked over a glass of wine: why do two people, tasting the same thing, describe entirely different experiences?
+Cognitive neuroscientist and PhD researcher exploring how the brain constructs, organises, and remembers flavour. My research sits at the intersection of cognitive neuroscience, sensory science, and computational modelling, combining behavioural experiments with graph theory, representational similarity analysis, and inverse multidimensional scaling to study how sensory experiences become structured mental representations. Using wine and coffee as model systems, I investigate how learning and expertise shape the cognitive maps that support perception, memory, categorisation, and decision-making.
 
-That question became a research career. [Continue your story here — your academic path, what draws you to this intersection of neuroscience and sensory science, and what you hope your work contributes.]
+My academic path began with a simple question: why can two people taste the same thing yet experience it so differently? That curiosity led from studying neurobiology at Jagiellonian University, to cognitive neuroscience at the Donders Institute, and now to a PhD conducted across the Champalimaud Foundation, Institut Lyfe Research Center, and Université PSL.
 
-> [Optional: a short, memorable line about your work or philosophy — this will render as a large pull-quote.]
-
-[A closing paragraph — how the different threads of your work fit together: research, sensory judging, teaching, science communication.]
+Beyond academia, I work closely with the wine and specialty coffee communities as an international sensory judge, educator, and workshop leader. Connecting laboratory research with professional practice allows me to test scientific questions against real-world expertise while translating insights from cognitive neuroscience into practical tools for sensory professionals. Across both research and practice, I seek to understand the principles by which complex sensory experiences become structured knowledge.

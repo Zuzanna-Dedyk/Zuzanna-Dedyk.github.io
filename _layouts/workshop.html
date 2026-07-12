@@ -18,7 +18,7 @@ layout: default
     </p>
   </header>
 
-  {% assign feature = page.feature_image | default: page.photos[0] %}
+  {% assign feature = page.photo | default: page.feature_image | default: page.photos[0] %}
   {% if feature and feature != "" %}
   <img class="item-page__image" src="{{ feature | relative_url }}" alt="{{ page.image_alt | default: page.title }}">
   {% endif %}
@@ -27,15 +27,27 @@ layout: default
     {% if page.audience %}<p><strong>Audience:</strong> {{ page.audience }}</p>{% endif %}
   </div>
 
-  <div class="page__content">
-    {{ content }}
-  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; margin: 40px 0;">
+    {% if page.page_image %}
+    <div class="item-page__image-container" style="order: -1; position: sticky; top: 20px;">
+      <img class="item-page__image" src="{{ page.page_image | relative_url }}" alt="{{ page.title }}"
+        style="width: 100%; height: auto; border-radius: 8px; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    </div>
+    {% endif %}
 
-  {% if page.photos %}
-  <div class="item-page__photo-grid">
-    {% for photo in page.photos %}
-    <img src="{{ photo | relative_url }}" alt="">
-    {% endfor %}
+    <div class="page__content">
+      {{ content }}
+
+      <style>
+        .page__content img {
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+          margin: 20px 0;
+          display: block;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+      </style>
+    </div>
   </div>
-  {% endif %}
 </article>

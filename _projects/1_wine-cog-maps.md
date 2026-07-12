@@ -1,6 +1,6 @@
 ---
 title: "Cognitive Maps of Flavour"
-image: "assets/images/cognitive-maps-wine.jpg"
+image: "assets/images/red-rothko-background.png"
 summary: "How is wine represented inside the human mind?"
 collaborators: "Jeremie Lafraire, Zachary Mainen, Anne-Lise Saive"
 timeline: "2024 – present"

@@ -4,6 +4,9 @@ organiser: "Institut Lyfe Research Center"
 role: "Facilitator"
 location: "Lyon, France"
 audience: "Graduate wine students"
+cover_image: ""
+feature_image: ""
+image_alt: ""
 photos: []
 ---
 

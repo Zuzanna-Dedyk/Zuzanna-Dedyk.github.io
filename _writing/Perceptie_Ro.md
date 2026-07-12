@@ -1,8 +1,8 @@
 ---
 title: "Science & Coffee: Perception"
 outlet: "Coffee Break Magazine"
-photo: "assets/images/science-coffee-perception.jpg"
-page_image: "assets/images/science-coffee-perception-article.jpg"
+photo: "assets/images/Perception-article-print-screen.jpg"
+page_image: "assets/images/Perception-article-print-screen.jpg"
 abstract: "An exploration of how science reveals the hidden complexity of coffee perception and sensory experience."
 url: "https://coffeebreakmagazine.com/science-coffee-perception"
 ---

@@ -4,6 +4,9 @@ organiser: "Champalimaud Foundation Annual Research Retreat"
 role: "Facilitator"
 location: "Portugal"
 audience: "Researchers"
+cover_image: ""
+feature_image: ""
+image_alt: ""
 photos: []
 ---
 
