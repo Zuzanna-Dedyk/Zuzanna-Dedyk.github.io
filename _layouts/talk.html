@@ -18,23 +18,40 @@ layout: default
     </p>
   </header>
 
-  {% assign feature = page.feature_image | default: page.photo %}
-  {% if feature and feature != "" %}
-  <img class="item-page__image" src="{{ feature | relative_url }}" alt="{{ page.image_alt | default: page.title }}">
-  {% endif %}
+  {% assign feature = page.feature_image | default: page.photo | default: page.photos[0] %}
 
-  {% if page.abstract %}
-  <div class="page__content">
-    <p>{{ page.abstract }}</p>
-  </div>
-  {% endif %}
+  <div class="item-page__split">
+    <div class="item-page__media" aria-hidden="false">
+      {% if feature and feature != "" %}
+        <img class="item-page__media-img" src="{{ feature | relative_url }}" alt="{{ page.image_alt | default: page.title }}">
+      {% else %}
+        <div class="item-page__media-placeholder"></div>
+      {% endif %}
 
-  <div class="page__content">
-    {{ content }}
-  </div>
+      {% if page.photos %}
+        <div class="item-page__photo-grid">
+          {% for p in page.photos %}
+            <img src="{{ p | relative_url }}" alt="">
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
 
-  <div class="item-page__links">
-    {% if page.slides %}<a class="btn btn--secondary" href="{{ page.slides | relative_url }}" target="_blank" rel="noopener noreferrer">Slides</a>{% endif %}
-    {% if page.recording %}<a class="btn btn--secondary" href="{{ page.recording }}" target="_blank" rel="noopener noreferrer">Recording</a>{% endif %}
+    <div class="item-page__body">
+      {% if page.abstract %}
+      <div class="page__content">
+        <p>{{ page.abstract }}</p>
+      </div>
+      {% endif %}
+
+      <div class="page__content">
+        {{ content }}
+      </div>
+
+      <div class="item-page__links">
+        {% if page.slides %}<a class="btn btn--secondary" href="{{ page.slides | relative_url }}" target="_blank" rel="noopener noreferrer">Slides</a>{% endif %}
+        {% if page.recording %}<a class="btn btn--secondary" href="{{ page.recording }}" target="_blank" rel="noopener noreferrer">Recording</a>{% endif %}
+      </div>
+    </div>
   </div>
 </article>

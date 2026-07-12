@@ -1,0 +1,145 @@
+/* item-pages.css
+   Additional styles for item pages: 50/50 media + body split, wider
+   layout, and responsive behavior. Kept separate so it's easy to edit
+   without touching the large main.css file. */
+
+:root {
+  --content-width-wide: 1400px;
+}
+
+/* Give item pages more horizontal room */
+.item-page {
+  max-width: var(--content-width-wide);
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}
+
+/* Split layout: left media, right body */
+.item-page__split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+/* Media column: large image or a simple photo area */
+.item-page__media {
+  width: 100%;
+  height: 65vh; /* large visual presence on desktop */
+  overflow: hidden;
+  display: block;
+  background: var(--color-bg); /* fallback */
+  position: relative;
+}
+
+.item-page__media-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-plane-wine);
+  color: var(--color-on-plane);
+  font-family: var(--font-display);
+  font-size: 3rem;
+}
+
+.item-page__media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(10%) contrast(1.02);
+  transition: filter var(--transition-base);
+}
+
+.item-page__media-img:hover {
+  filter: grayscale(0%);
+}
+
+/* If multiple photos are provided, show a simple grid of thumbnails */
+.item-page__photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: var(--space-md);
+  background: linear-gradient(to top, rgba(0,0,0,0.12), transparent);
+}
+
+.item-page__photo-grid img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(15%);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.item-page__photo-grid img.selected {
+  border-color: var(--color-accent);
+}
+
+.item-page__body {
+  /* keep the content column full width within its column */
+}
+
+.item-page__body .page__content {
+  max-width: 100%; /* override the site-wide 640px narrow cap for item pages */
+}
+
+/* Carousel controls (overlay) */
+.item-page__carousel-controls {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.item-page__carousel-controls button {
+  background: rgba(255,255,255,0.9);
+  border: none;
+  padding: 8px 10px;
+  cursor: pointer;
+  pointer-events: auto;
+  font-family: var(--font-mono);
+}
+
+/* Smaller side padding and single-column layout on small screens */
+@media (max-width: 900px) {
+  .item-page {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  .item-page__split {
+    grid-template-columns: 1fr;
+  }
+
+  .item-page__media {
+    height: 40vh;
+  }
+
+  .item-page__photo-grid {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+    background: transparent;
+    padding: 0;
+  }
+
+  .item-page__photo-grid img {
+    height: 60px;
+  }
+}
