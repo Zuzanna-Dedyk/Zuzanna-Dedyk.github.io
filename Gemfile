@@ -4,12 +4,15 @@ source "https://rubygems.org"
 # plugin versions that GitHub itself uses to build your live site.
 # Using it locally means: "if it builds on my computer, it will build
 # on GitHub too" — no surprises.
-gem "github-pages", group: :jekyll_plugins
+
+source "https://rubygems.org"
+
+gem "github-pages", "~> 232", group: :jekyll_plugins
 
 group :jekyll_plugins do
   gem "jekyll-seo-tag"
   gem "jekyll-sitemap"
-  gem "jekyll-feed"
+  gem "jekyll-feed", "~> 0.17"  # Explicitly pin a version
 end
 
 # The following is only needed on Windows/JRuby machines.
