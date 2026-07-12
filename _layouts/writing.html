@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<!--
+  _layouts/writing.html
+  Renders one individual "writing" / science-communication page.
+  Applied automatically to every file in _writing/ via _config.yml defaults.
+  This mirrors the item-page split used for projects and talks so writing
+  entries share the same 50/50 media + body layout.
+-->
+<article class="page item-page writing-page">
+  <a class="back-link" href="{{ '/science-communication/' | relative_url }}">&larr; Back to Science Communication</a>
+
+  <header class="page__header">
+    <h1 class="page__title">{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="page__subtitle">{{ page.subtitle }}</p>{% endif %}
+  </header>
+
+  {% assign feature = page.feature_image | default: page.image | default: page.photos[0] %}
+
+  <div class="item-page__split">
+    <div class="item-page__media" aria-hidden="false">
+      {% if feature and feature != "" %}
+        <img class="item-page__media-img" src="{{ feature | relative_url }}" alt="{{ page.image_alt | default: page.title }}">
+      {% else %}
+        <div class="item-page__media-placeholder"></div>
+      {% endif %}
+
+      {% if page.photos %}
+        <div class="item-page__photo-grid">
+          {% for p in page.photos %}
+            <img src="{{ p | relative_url }}" alt="">
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="item-page__body">
+      <div class="page__content">
+        {{ content }}
+      </div>
+
+      {% if page.links %}
+      <div class="item-page__links">
+        {% for link in page.links %}
+        <a class="btn btn--secondary" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</article>
