@@ -15,17 +15,22 @@ layout: default
     {% if page.timeline %}<p class="page__subtitle">{{ page.timeline }}</p>{% endif %}
   </header>
 
-  {% if page.image %}
-  <img class="item-page__image" src="{{ page.image | relative_url }}" alt="">
-  {% endif %}
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; margin-bottom: 40px;">
+    {% if page.image %}
+    <div class="item-page__image-container" style="order: -1;">
+      <img class="item-page__image" src="{{ page.image | relative_url }}" alt="{{ page.title }}"
+        style="width: 100%; border-radius: 8px; display: block;">
+    </div>
+    {% endif %}
 
-  <div class="item-page__meta">
-    {% if page.collaborators %}<p><strong>Collaborators:</strong> {{ page.collaborators }}</p>{% endif %}
-    {% if page.funding %}<p><strong>Funding:</strong> {{ page.funding }}</p>{% endif %}
-  </div>
+    <div class="item-page__meta">
+      {% if page.collaborators %}<p><strong>Collaborators:</strong> {{ page.collaborators }}</p>{% endif %}
+      {% if page.funding %}<p><strong>Funding:</strong> {{ page.funding }}</p>{% endif %}
 
-  <div class="page__content">
-    {{ content }}
+      <div class="page__content" style="margin-top: 20px;">
+        {{ content }}
+      </div>
+    </div>
   </div>
 
   {% if page.links %}
