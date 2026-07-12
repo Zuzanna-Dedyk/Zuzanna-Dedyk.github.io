@@ -111,6 +111,7 @@ plugins:
   - jekyll-seo-tag     # generates SEO meta tags automatically
   - jekyll-sitemap     # generates sitemap.xml automatically
   - jekyll-feed        # generates an RSS feed automatically
+  
 
 # --- Files Jekyll should ignore when building ---
 exclude:

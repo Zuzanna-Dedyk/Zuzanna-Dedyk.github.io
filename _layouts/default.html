@@ -8,9 +8,12 @@
   edit this file when adding ordinary content.
 -->
 <html lang="en">
+
 <head>
   {% include head.html %}
+  {% feed_meta %}
 </head>
+
 <body>
 
   <!-- Lets keyboard/screen-reader users jump straight past the nav -->
@@ -26,4 +29,5 @@
 
   <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
 </body>
+
 </html>
