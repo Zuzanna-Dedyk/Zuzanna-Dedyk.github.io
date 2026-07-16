@@ -31,7 +31,8 @@ layout: default
       {% if page.links %}
       <div class="item-page__links">
         {% for link in page.links %}
-        <a class="btn btn--secondary" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+        <a class="btn btn--secondary" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label
+          }}</a>
         {% endfor %}
       </div>
       {% endif %}

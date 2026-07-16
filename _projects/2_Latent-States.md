@@ -3,12 +3,12 @@ title: "Latent States Project"
 image: "assets/images/latent-states-WL-2024.JPG"
 summary: "Investigating how the brain constructs perceptual reality by studying the interaction between sensory evidence, mental imagery, and internal states. Using flavour as a model system, this project explores how altered states of consciousness reshape multisensory perception and the boundaries between imagination and sensation."
 collaborators: "Razvan Sandru, Melanie Wiehe, PI Zachary Mainen"
-timeline: "2024 – present"
+timeline: "2023 – present"
 partners: "Waking Life Festival, Kosmicare"
 institutuion: "Champalimaud Foundation, Lisbon"
 
 ---
-#**Exploring how the brain constructs perceptual reality through flavour, imagery, and altered states**
+# Exploring how the brain constructs perceptual reality through flavour, imagery, and altered states
 
 How does the brain decide what is real? Perception is not a passive recording of the external world — it emerges from a dynamic interaction between sensory input, prior knowledge, expectations, and internal representations. The Latent States Project investigates how these hidden cognitive processes shape conscious experience, using flavour perception as a unique window into the construction of reality.
 
