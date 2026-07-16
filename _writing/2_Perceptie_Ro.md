@@ -16,7 +16,4 @@ url: ""
 </div>
 {% endif %}
 
-<!-- Add your article summary or excerpt here -->
-
-<!-- Optional: Link to PDF if you have one -->
-<!-- [Download PDF](assets/pdf/science-coffee-perception.pdf) -->
+Science & Coffee: Perception — A popular science article exploring how the brain constructs coffee flavour through multisensory integration, memory, and context, translating cognitive neuroscience into practical insights for coffee enthusiasts and professionals.
