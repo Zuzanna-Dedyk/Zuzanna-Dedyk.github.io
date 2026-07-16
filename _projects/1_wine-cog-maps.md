@@ -9,7 +9,7 @@ Institutions: "Champalimaud Foundation, Lisbon; Institut Lyfe Research Center, E
 ---
 # The Art and Analytics of Wine Tasting
 
-## How does expertise transform sensory experience into structured knowledge?
+### How does expertise transform sensory experience into structured knowledge?
 
 Flavour perception is not a simple readout of sensory input. It emerges from the interaction between taste, smell, memory, language, cultural learning, and prior experience. This project investigates how the human brain organises complex sensory information into meaningful cognitive spaces, using wine tasting as a naturalistic model of expertise.
 
@@ -24,13 +24,3 @@ Ultimately, this work seeks to develop a mechanistic understanding of how the br
 **Methods:** Projective Mapping (Napping), sensory evaluation, representational similarity analysis, graph theory, computational modelling, expertise research.
 
 **Collaborations:** Champalimaud Foundation — Systems Neuroscience Lab; Institut Lyfe Research Center; CHArt Lab, EPHE–PSL.
-
-<!--
-How is wine represented inside the human mind?
-
-Traditional sensory science often treats wines as collections of independent descriptors—acidity, tannins, aroma intensity or fruit character. I approach flavour from a different perspective: as a structured cognitive space.
-
-Using behavioural experiments, inverse multidimensional scaling (iMDS), representational similarity analysis and graph theory, I investigate how individuals mentally organise wines and how these internal representations influence recognition, categorisation and decision making.
-
-Rather than asking whether two wines differ chemically, I ask how similar they are within a person's internal perceptual landscape.
-->
