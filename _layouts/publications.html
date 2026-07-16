@@ -4,14 +4,7 @@ layout: page
 <!--
   _layouts/publications.html
   Used only by _site_pages/publications.md. Has two sections:
-
-  1. Scientific Publications — pulled from _publications/, shown as an
-     APA-style citation list. Each citation ends with a small "•" that
-     links to the DOI. Clicking the citation text itself goes to that
-     publication's own page (abstract, PDF, BibTeX, etc).
-     Sorted newest year first, automatically.
-
-  2. Science Communication — pulled from the new _writing/ collection,
+  1. Science Communication — pulled from the new _writing/ collection,
      shown as the same square gallery tiles used on Research/Events
      (unified visual language across the whole site). Clicking a tile
      opens the original article on its external site (e.g. Trybuszon)
@@ -19,8 +12,52 @@ layout: page
      meaning it's just a list of data (title/photo/link) — no separate
      page is built for each one, since the real article already lives
      elsewhere.
+   2. Scientific Publications — pulled from _publications/, shown as an
+     APA-style citation list. Each citation ends with a small "•" that
+     links to the DOI. Clicking the citation text itself goes to that
+     publication's own page (abstract, PDF, BibTeX, etc).
+     Sorted newest year first, automatically.
 -->
+<!-- ============ SCIENCE COMMUNICATION ============ -->
+<div class="section-heading">
+  <h2>Science communication</h2>
+</div>
 
+{% assign pieces = site.writing | sort: 'date' | reverse %}
+{% if pieces.size == 0 %}
+<p class="empty-state">Nothing here yet.</p>
+{% else %}
+<div class="research-gallery">
+  {% assign planes = "wine,plum,charcoal" | split: "," %}
+  {% for piece in pieces %}
+  {% assign plane_index = forloop.index0 | modulo: 3 %}
+  {% assign plane = planes[plane_index] %}
+  {% assign cover = piece.cover_image | default: piece.photo %}
+
+  {% if cover and cover != "" %}
+  <a class="gallery-room gallery-room--photo" href="{{ piece.url }}" target="_blank" rel="noopener noreferrer">
+    <div class="gallery-room__media">
+      <img src="{{ cover | relative_url }}" alt="{{ piece.image_alt | default: piece.title }}">
+    </div>
+    <div class="gallery-room__text gallery-room__text--overlay gallery-room__text--scrim">
+      {% if piece.outlet %}<span class="gallery-room__index">{{ piece.outlet }}</span>{% endif %}
+      <h3>{{ piece.title }}</h3>
+      <span class="gallery-room__cta">Read story &rarr;</span>
+    </div>
+  </a>
+  {% else %}
+  <a class="gallery-room gallery-room--plane gallery-room--{{ plane }}" href="{{ piece.url }}" target="_blank"
+    rel="noopener noreferrer">
+    <div class="gallery-room__text gallery-room__text--overlay">
+      {% if piece.outlet %}<span class="gallery-room__index">{{ piece.outlet }}</span>{% endif %}
+      <h3>{{ piece.title }}</h3>
+      <span class="gallery-room__cta">Read story &rarr;</span>
+    </div>
+  </a>
+  {% endif %}
+  {% endfor %}
+</div>
+{% endif %}
 <!-- ============ SCIENTIFIC PUBLICATIONS ============ -->
 <div class="section-heading">
   <h2>Scientific publications</h2>
@@ -28,7 +65,7 @@ layout: page
 
 {% assign pubs = site.publications | sort: 'year' | reverse %}
 {% if pubs.size == 0 %}
-  <p class="empty-state">Nothing here yet.</p>
+<p class="empty-state">Nothing here yet.</p>
 {% else %}
 <ol class="citation-list">
   {% for pub in pubs %}
@@ -38,49 +75,10 @@ layout: page
       {% if pub.journal %}<span class="citation__journal">{{ pub.journal }}</span>.{% endif %}
     </a>
     {% if pub.doi %}
-    <a class="citation__dot" href="{{ pub.doi }}" target="_blank" rel="noopener noreferrer" aria-label="View DOI for {{ pub.title }}" title="DOI">&#9679;</a>
+    <a class="citation__dot" href="{{ pub.doi }}" target="_blank" rel="noopener noreferrer"
+      aria-label="View DOI for {{ pub.title }}" title="DOI">&#9679;</a>
     {% endif %}
   </li>
   {% endfor %}
 </ol>
-{% endif %}
-
-<!-- ============ SCIENCE COMMUNICATION ============ -->
-<div class="section-heading">
-  <h2>Science communication</h2>
-</div>
-
-{% assign pieces = site.writing | sort: 'date' | reverse %}
-{% if pieces.size == 0 %}
-  <p class="empty-state">Nothing here yet.</p>
-{% else %}
-<div class="research-gallery">
-  {% assign planes = "wine,plum,charcoal" | split: "," %}
-  {% for piece in pieces %}
-    {% assign plane_index = forloop.index0 | modulo: 3 %}
-    {% assign plane = planes[plane_index] %}
-    {% assign cover = piece.cover_image | default: piece.photo %}
-
-    {% if cover and cover != "" %}
-    <a class="gallery-room gallery-room--photo" href="{{ piece.url }}" target="_blank" rel="noopener noreferrer">
-      <div class="gallery-room__media">
-        <img src="{{ cover | relative_url }}" alt="{{ piece.image_alt | default: piece.title }}">
-      </div>
-      <div class="gallery-room__text gallery-room__text--overlay gallery-room__text--scrim">
-        {% if piece.outlet %}<span class="gallery-room__index">{{ piece.outlet }}</span>{% endif %}
-        <h3>{{ piece.title }}</h3>
-        <span class="gallery-room__cta">Read story &rarr;</span>
-      </div>
-    </a>
-    {% else %}
-    <a class="gallery-room gallery-room--plane gallery-room--{{ plane }}" href="{{ piece.url }}" target="_blank" rel="noopener noreferrer">
-      <div class="gallery-room__text gallery-room__text--overlay">
-        {% if piece.outlet %}<span class="gallery-room__index">{{ piece.outlet }}</span>{% endif %}
-        <h3>{{ piece.title }}</h3>
-        <span class="gallery-room__cta">Read story &rarr;</span>
-      </div>
-    </a>
-    {% endif %}
-  {% endfor %}
-</div>
 {% endif %}

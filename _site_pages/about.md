@@ -10,19 +10,19 @@ image_alt: "Portrait of Zuzanna Dedyk"
 # Add, remove, or reorder entries freely — newest first works well,
 # but the order is entirely up to you. "place" is optional.
 # --------------------------------------------------------------
-timeline:
-  - year: "2024 – present"
-    title: "PhD in Neuroscience"
-    place: "Champalimaud Foundation · Université PSL (EPHE) · Institut Lyfe"
-  - year: "2023 – 2024"
-    title: "Research Technician, Systems Neuroscience Laboratory"
-    place: "Champalimaud Research"
-  - year: "2021 – 2023"
-    title: "MRes in Cognitive Neuroscience"
-    place: "Radboud University — Donders Institute for Brain, Behaviour and Cognition"
-  - year: "2017 – 2020"
-    title: "BSc in Mathematics and Natural Sciences, Neurobiology Specialisation"
-    place: "Jagiellonian University, Kraków"
+#timeline:
+# - year: "2024 – present"
+#    title: "PhD in Neuroscience"
+#    place: "Champalimaud Foundation · Université PSL (EPHE) · Institut Lyfe"
+#  - year: "2023 – 2024"
+#    title: "Research Technician, Systems Neuroscience Laboratory"
+#    place: "Champalimaud Research"
+#  - year: "2021 – 2023"
+#    title: "MRes in Cognitive Neuroscience"
+#    place: "Radboud University — Donders Institute for Brain, Behaviour and Cognition"
+#  - year: "2017 – 2020"
+#    title: "BSc in Mathematics and Natural Sciences, Neurobiology Specialisation"
+#    place: "Jagiellonian University, Kraków"
 ---
 
 <!--

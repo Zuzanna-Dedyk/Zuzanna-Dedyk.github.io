@@ -6,13 +6,13 @@ layout: default
   Individual publication page. Shows the full citation, abstract, and
   publication metadata (DOI, BibTeX, etc).
 -->
-
 <article class="page item-page publication-page">
   <a class="back-link" href="{{ '/publications/' | relative_url }}">&larr; Back to Publications</a>
 
   <header class="page__header">
     <h1 class="page__title">{{ page.title }}</h1>
-    <p class="page__subtitle">{% if page.journal %}{{ page.journal }}{% endif %}{% if page.year %} · {{ page.year }}{% endif %}</p>
+    <p class="page__subtitle">{% if page.journal %}{{ page.journal }}{% endif %}{% if page.year %} · {{ page.year }}{%
+      endif %}</p>
   </header>
 
   <div class="item-page__split">
@@ -26,7 +26,7 @@ layout: default
         </div>
 
         {% if page.doi %}
-          <p><strong>DOI:</strong> <a href="{{ page.doi }}" target="_blank" rel="noopener noreferrer">View DOI</a></p>
+        <p><strong>DOI:</strong> <a href="{{ page.doi }}" target="_blank" rel="noopener noreferrer">View DOI</a></p>
         {% endif %}
       </div>
 
