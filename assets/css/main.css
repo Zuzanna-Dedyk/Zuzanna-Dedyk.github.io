@@ -40,12 +40,12 @@
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
 
-  --space-xs: 0.5rem;
+  --space-xs: 0.25rem;
   --space-sm: 1rem;
-  --space-md: 2rem;
+  --space-md: 1.5rem;
   --space-lg: 3rem;
-  --space-xl: 6rem;
-  --space-2xl: 10rem;
+  --space-xl: 4rem;
+  --space-2xl: 8rem;
 
   --content-width: 1120px;
   --content-width-narrow: 680px;
