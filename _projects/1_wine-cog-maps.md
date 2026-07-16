@@ -4,11 +4,10 @@ image: "assets/images/red-rothko-background.png"
 summary: "Cognitive Maps of Flavour explores how expertise shapes the internal representations that guide perception and decision-making. Using wine tasting as a naturalistic model system, this project combines sensory science, cognitive neuroscience, and computational modelling to investigate how experts and novices organise complex flavour experiences into structured cognitive maps."
 collaborators: "Jeremie Lafraire, Zachary Mainen, Anne-Lise Saive"
 timeline: "2024 – present"
-Institutions: "Champalimaud Foundation, Lisbon; Institut Lyfe Research Center, Ecully; EPHE–PSL, Paris"
+institutions: "Champalimaud Foundation, Lisbon; Institut Lyfe Research Center, Lyon; EPHE–PSL, Paris"
 
 ---
 # The Art and Analytics of Wine Tasting
-
 ### How does expertise transform sensory experience into structured knowledge?
 
 Flavour perception is not a simple readout of sensory input. It emerges from the interaction between taste, smell, memory, language, cultural learning, and prior experience. This project investigates how the human brain organises complex sensory information into meaningful cognitive spaces, using wine tasting as a naturalistic model of expertise.
