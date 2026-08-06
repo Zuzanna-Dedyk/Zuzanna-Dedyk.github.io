@@ -23,7 +23,7 @@ hero_tagline: ""
 # Path to your photo, once you upload one to assets/images/.
 # Leave the quotes empty ("") to show a placeholder circle with
 # your first initial instead — useful until you have a photo ready.
-portrait: ""
+portrait: "assets/images/8.jpg"
 
 # --------------------------------------------------------------
 # RESEARCH INTERESTS
