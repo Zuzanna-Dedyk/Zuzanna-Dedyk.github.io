@@ -2,7 +2,7 @@
 layout: about
 title: About
 description: "About Zuzanna Dedyk — background, academic journey, and the path into cognitive neuroscience and flavour perception."
-portrait: ""
+portrait: "assets/images/1.jpg"
 image_alt: "Portrait of Zuzanna Dedyk"
 
 # --------------------------------------------------------------

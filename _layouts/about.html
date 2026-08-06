@@ -17,11 +17,11 @@ layout: page
 <div class="about-intro">
   <div class="about-intro__media">
     {% if page.portrait and page.portrait != "" %}
-      <img src="{{ page.portrait | relative_url }}" alt="{{ page.image_alt | default: site.author.name }}">
+    <img src="{{assets/images/1.jpg }}" alt="{{ page.image_alt | default: site.author.name }}">
     {% else %}
-      <div class="about-intro__media-placeholder" aria-hidden="true">
-        {{ site.author.name | slice: 0, 1 }}
-      </div>
+    <div class="about-intro__media-placeholder" aria-hidden="true">
+      {{ site.author.name | slice: 0, 1 }}
+    </div>
     {% endif %}
   </div>
 
