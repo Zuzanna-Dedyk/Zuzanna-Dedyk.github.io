@@ -1,17 +1,16 @@
 ---
 title: "Sensory Evaluation in Specialty Coffee - When Coffee Becomes a Research Tool"
+conference: "Invited Research Seminar"
 organiser: "Donders Focus Group on Olfaction in Cognition, Brain, and Behaviour — Radboud University"
 role: "Workshop Lead"
 location: "Nijmegen, the Netherlands"
 audience: "Olfaction researchers and neuroscientists"
+date: 2026-05-13
 cover_image: "assets/images/Donders-workgroup-portrait.jpg" 
 feature_image: "assets/images/Donders-workgroup-coffee.jpg"
 image_alt: ""
-photos: []
-description: "An interactive workshop inviting olfaction researchers to evaluate specialty coffee using professional judging protocols — surfacing the vocabulary gap between trained sensory judges and scientists, and what it reveals about the limits of laboratory-controlled sensory science."
-
+abstract: "An interactive workshop inviting olfaction researchers to evaluate specialty coffee using professional judging protocols — surfacing the vocabulary gap between trained sensory judges and scientists, and what it reveals about the limits of laboratory-controlled sensory science."
 ---
-
 I led this workshop for the Donders Focus Group on Olfaction in Cognition, Brain, and Behaviour, inviting neuroscientists and olfaction researchers to evaluate specialty coffee using the same protocols professional judges use in competition. The premise was simple: give people trained to study perception a chance to navigate sensory complexity in real time, with real stimuli, under real constraints.
 
 Analytical tools can tell us a great deal about coffee — gas chromatography identifies volatile compounds, refractometers measure dissolved solids, pH meters track acidity — but none of them can predict whether a coffee will taste fruity or floral, or whether anyone will actually want to drink it. Professional coffee judges work with a different kind of complexity: managing high-dimensional sensory information, across dozens of samples, that exceeds the resolution of current analytical methods.
@@ -23,4 +22,3 @@ That distinction raises a question I keep returning to: how much of sensory expe
 No firm conclusions yet — just better questions, and ones I intend to keep pursuing.
 
 With thanks to Ilja Croijmans and the Donders Institute for the invitation, and to Blommers Coffee Roasters and Moccamaster for supporting the session.
-
