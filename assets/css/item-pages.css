@@ -1,4 +1,4 @@
-/* added small index card helpers */
+/* Existing index card helpers */
 .card__title {
   font-weight: 600;
 }
@@ -12,4 +12,67 @@
   color: var(--color-text-secondary);
   font-family: var(--font-mono);
   font-size: 0.85rem;
+}
+
+/* Two-column layout */
+.item-page__split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .item-page__split {
+    grid-template-columns: 1fr 1fr;
+    /* Photo on left, text on right */
+    align-items: start;
+  }
+}
+
+/* Touch-swipable CSS Carousel */
+.carousel {
+  position: relative;
+  width: 100%;
+}
+
+.carousel__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 8px;
+  gap: 1rem;
+
+  /* Hide scrollbars */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel__slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+.carousel__slide img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Matches your site's font and muted color styling */
+.carousel__indicator {
+  margin-top: 0.5rem;
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-align: center;
 }

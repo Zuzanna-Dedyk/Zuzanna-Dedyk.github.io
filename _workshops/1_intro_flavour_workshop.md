@@ -8,10 +8,10 @@ cover_image: "assets/images/Izmir-2026-portrait.jpg"
 feature_image: "assets/images/Izmir-2026-prep.jpg"
 image_alt: ""
 photos:
-  - assets/images/Izmir-2026-baner.jpg
-  - assets/images/Izmir-2026-group.jpg
-  - assets/images/Izmir-2026-notes.jpg
-  - assets/images/Izmir-2026-judge-hand.jpg
+  - "assets/images/Izmir-2026-baner.jpg"
+  - "assets/images/Izmir-2026-group.jpg"
+  - "assets/images/Izmir-2026-notes.jpg"
+  - "assets/images/Izmir-2026-judge-hand.jpg"
 ---
 An introduction to how the brain constructs flavour, designed for audiences without a scientific background — enthusiasts, students, or anyone curious why the same cup or glass can taste different to different people. The session moves from the basic distinction between taste and flavour to the role of expectation, context, and multisensory cues such as colour and sound in shaping perception.
 
@@ -20,4 +20,3 @@ Concepts are illustrated through simple, hands-on demonstrations — including t
 <!--
 Delivered at: [no confirmed past delivery yet — leave the photo strip empty for now, or add once this format runs]
 -->
-

@@ -7,7 +7,8 @@ audience: "Industry professionals"
 cover_image: "assets/images/Smelling wine_good.JPG"
 feature_image: ""
 image_alt: ""
-photos: []
+photos:
+    - "assets/images/Smelling wine_good.JPG"
 ---
 A side-by-side comparison of sensory evaluation in coffee and wine, for professionals working across either or both industries. The session traces where methodologies such as SCA cupping and WSET deductive tasting converge and diverge, and considers where human sensory judgment continues to outperform technological methods such as gas chromatography.
 

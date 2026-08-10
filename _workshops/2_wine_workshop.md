@@ -7,7 +7,9 @@ audience: "Wine students & professionas"
 cover_image: "assets/images/fuschia-Rothko-background.png"
 feature_image: ""
 image_alt: ""
-photos: []
+photos: 
+    - ""
+    - ""
 ---
 Applies the neuroscience of flavour perception to wine, for sommeliers, winemakers, and wine educators. Drawing on current research in neuroenology, the session frames wine tasting not as passive detection but as an active construction of flavour, built from the integration of olfactory, gustatory, trigeminal, and contextual information.
 
