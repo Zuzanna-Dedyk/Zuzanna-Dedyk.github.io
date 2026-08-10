@@ -1,4 +1,9 @@
-/* Existing index card helpers */
+/* ==========================================================================
+   WORKSHOP ITEM PAGE & SWIPEABLE GALLERY CAROUSEL
+   Integrated with the site's editorial exhibition design system.
+   ========================================================================== */
+
+/* Index card helpers */
 .card__title {
   font-weight: 600;
 }
@@ -14,23 +19,33 @@
   font-size: 0.85rem;
 }
 
-/* Two-column layout */
+/* Two-column split layout */
 .item-page__split {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+  width: 100%;
 }
 
 @media (min-width: 768px) {
   .item-page__split {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    /* Photo on left, text on right */
+    /* 50% Photo / 50% Content */
+    gap: var(--space-xl);
     align-items: start;
   }
 }
 
-/* Touch-swipable CSS Carousel */
+/* CRITICAL FIX: Forces grid children to strictly respect 50% width without blowout */
+.item-page__media,
+.item-page__body {
+  min-width: 0;
+  width: 100%;
+}
+
+/* Touch-swipable CSS Scroll-Snap Carousel */
 .carousel {
   position: relative;
   width: 100%;
@@ -38,14 +53,15 @@
 
 .carousel__track {
   display: flex;
+  width: 100%;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  border-radius: 8px;
-  gap: 1rem;
+  border: 1px solid var(--color-border);
+  /* Exhibition hairline border */
 
-  /* Hide scrollbars */
+  /* Hide scrollbars while preserving touch swipe */
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -56,6 +72,9 @@
 
 .carousel__slide {
   flex: 0 0 100%;
+  /* Exactly 100% width per slide (no flex gap overflows) */
+  width: 100%;
+  max-width: 100%;
   scroll-snap-align: start;
 }
 
@@ -64,15 +83,41 @@
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: 8px;
   display: block;
+  border-radius: var(--radius);
+  /* Uses site zero-radius design token */
+  filter: grayscale(15%) contrast(1.02);
+  /* Site exhibition desaturation */
+  transition: filter var(--transition-base);
 }
 
-/* Matches your site's font and muted color styling */
+.carousel__slide img:hover {
+  filter: grayscale(0%);
+}
+
+/* Fallback single image */
+.item-page__single-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  border: 1px solid var(--color-border);
+  filter: grayscale(15%) contrast(1.02);
+  transition: filter var(--transition-base);
+}
+
+.item-page__single-img:hover {
+  filter: grayscale(0%);
+}
+
+/* Carousel Indicator Hint */
 .carousel__indicator {
-  margin-top: 0.5rem;
+  margin-top: var(--space-xs);
   color: var(--color-text-secondary);
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   text-align: center;
 }

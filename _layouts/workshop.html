@@ -1,10 +1,6 @@
 ---
 layout: default
 ---
-<!--
-  _layouts/workshop.html
-  Renders one individual workshop page. Applied automatically to every file in _workshops/ (set in _config.yml).
--->
 <article class="page item-page">
   <a class="back-link" href="{{ '/events/' | relative_url }}">&larr; Back to Events</a>
 
@@ -18,7 +14,64 @@ layout: default
   </header>
 
   <div class="item-page__split">
-    <!-- Media / Photo Slider Column -->
+    <!-- Left Column: Photo Carousel or Single Image -->
+    <div class="item-page__media-col">
+      {% if page.photos and page.photos.size > 0 %}
+      <div class="workshop-carousel">
+        <div class="workshop-carousel__track">
+          {% for photo in page.photos %}
+          <div class="workshop-carousel__slide">
+            <img src="{{ photo | relative_url }}" alt="{{ page.title }} photo {{ forloop.index }}" loading="lazy" />
+          </div>
+          {% endfor %}
+        </div>
+        {% if page.photos.size > 1 %}
+        <p class="workshop-carousel__hint">&larr; Swipe photos &rarr;</p>
+        {% endif %}
+      </div>
+      {% elsif page.image %}
+      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="workshop-single-img" />
+      {% else %}
+      {% include item-media.html %}
+      {% endif %}
+    </div>
+
+    <!-- Right Column: Workshop Text Content -->
+    <div class="item-page__body">
+      {% if page.audience %}
+      <div class="item-page__meta">
+        <p><strong>Audience:</strong> {{ page.audience }}</p>
+      </div>
+      {% endif %}
+
+      <div class="page__content">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</article>
+
+<!---
+---
+layout: default
+---
+
+  _layouts/workshop.html
+  Renders one individual workshop page. Applied automatically to every file in _workshops/ (set in _config.yml).
+  <article class="page item-page">
+  <a class="back-link" href="{{ '/events/' | relative_url }}">&larr; Back to Events</a>
+
+  <header class="page__header">
+    <h1 class="page__title">{{ page.title }}</h1>
+    <p class="page__subtitle">
+      {% if page.role %}{{ page.role }}{% endif %}
+      {% if page.organiser %} — {{ page.organiser }}{% endif %}
+      {% if page.location %} · {{ page.location }}{% endif %}
+    </p>
+  </header>
+
+  <div class="item-page__split">
+     Media / Photo Slider Column 
     <div class="item-page__media">
       {% if page.photos and page.photos.size > 0 %}
       <div class="carousel">
@@ -38,8 +91,7 @@ layout: default
       {% endif %}
     </div>
 
-
-    <!-- Text & Content Column -->
+    Text & Content Column 
     <div class="item-page__body">
       {% if page.audience %}
       <div class="item-page__meta">
@@ -53,3 +105,56 @@ layout: default
     </div>
   </div>
 </article>
+---
+layout: default
+---
+<article class="page item-page">
+  <a class="back-link" href="{{ '/events/' | relative_url }}">&larr; Back to Events</a>
+
+  <header class="page__header">
+    <h1 class="page__title">{{ page.title }}</h1>
+    <p class="page__subtitle">
+      {% if page.role %}{{ page.role }}{% endif %}
+      {% if page.organiser %} — {{ page.organiser }}{% endif %}
+      {% if page.location %} · {{ page.location }}{% endif %}
+    </p>
+  </header>
+
+  <div class="item-page__split">
+    Left Column: Photo Carousel or Single Image 
+    <div class="item-page__media-col">
+      {% if page.photos and page.photos.size > 0 %}
+        <div class="workshop-carousel">
+          <div class="workshop-carousel__track">
+            {% for photo in page.photos %}
+              <div class="workshop-carousel__slide">
+                <img src="{{ photo | relative_url }}" alt="{{ page.title }} photo {{ forloop.index }}" loading="lazy" />
+              </div>
+            {% endfor %}
+          </div>
+          {% if page.photos.size > 1 %}
+            <p class="workshop-carousel__hint">&larr; Swipe photos &rarr;</p>
+          {% endif %}
+        </div>
+      {% elsif page.image %}
+        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="workshop-single-img" />
+      {% else %}
+        {% include item-media.html %}
+      {% endif %}
+    </div>
+
+    Right Column: Workshop Text Content
+    <div class="item-page__body">
+      {% if page.audience %}
+        <div class="item-page__meta">
+          <p><strong>Audience:</strong> {{ page.audience }}</p>
+        </div>
+      {% endif %}
+
+      <div class="page__content">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</article>
+-->
