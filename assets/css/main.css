@@ -47,8 +47,8 @@
   --space-xl: 4rem;
   --space-2xl: 8rem;
 
-  --content-width: 1120px;
-  --content-width-narrow: 680px;
+  --content-width: 1220px;
+  --content-width-narrow: 780px;
   --radius: 0px;
   --radius-btn: 2px;
 
@@ -1279,6 +1279,11 @@ a.card {
   gap: var(--space-md);
   margin-top: var(--space-lg);
 }
+
+.events-gallery {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 
 .gallery-room {
   position: relative;
