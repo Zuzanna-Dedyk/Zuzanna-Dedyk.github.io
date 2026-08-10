@@ -14,7 +14,7 @@ photos:
   - "assets/images/Izmir-2026-judge-hand.jpg"
   - "
 ---
-###Why does the same cup never taste quite the same to two people?
+### Why does the same cup never taste quite the same to two people?
 
 Taste feels like the most immediate of the senses - a liquid touches the tongue, and within moments we register bitter, sweet, sour, and decide whether we like it. But this apparent immediacy is misleading. What we call "flavour" is not detected so much as constructed: the brain fuses signals from the tongue with retronasal smell, temperature, texture, and even sound, and interprets the result through a lattice of memory, language, and expectation built over a lifetime of tasting. Two people holding the same cup are, in a meaningful sense, not tasting the same thing at all. One reason is biological - genetic variation in taste receptors means that a compound as simple as PROP can taste intensely bitter to one person and almost tasteless to another, a difference some researchers use to sort tasters into "supertaster," "taster," and "non-taster" populations. But biology is only the beginning of the story.
 
