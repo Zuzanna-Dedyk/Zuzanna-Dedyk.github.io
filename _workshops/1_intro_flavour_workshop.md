@@ -12,7 +12,6 @@ photos:
   - "assets/images/Izmir-2026-group.jpg"
   - "assets/images/Izmir-2026-notes.jpg"
   - "assets/images/Izmir-2026-judge-hand.jpg"
-  - "
 ---
 ### Why does the same cup never taste quite the same to two people?
 
