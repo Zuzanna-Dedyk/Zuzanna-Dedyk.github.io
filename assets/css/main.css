@@ -1280,9 +1280,6 @@ a.card {
   margin-top: var(--space-lg);
 }
 
-.events-gallery {
-  grid-template-columns: repeat(2, 1fr);
-}
 
 
 .gallery-room {
@@ -1404,6 +1401,11 @@ a.card {
   }
 }
 /* Events page 2-column grid override */
-.research-gallery.events-gallery {
+.research-gallery
+/* Events page specific gallery layout */
+.events-gallery {
+  display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
+  gap: var(--space-md) !important;
+  margin-top: var(--space-lg) !important;
 }

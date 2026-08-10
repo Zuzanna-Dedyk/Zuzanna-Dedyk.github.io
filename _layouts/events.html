@@ -31,7 +31,7 @@ layout: page
 {% if workshops.size == 0 %}
 <p class="empty-state">Nothing here yet.</p>
 {% else %}
-<div class="research-gallery events-gallery">
+<div class="events-gallery">
   {% assign planes = "wine,plum,charcoal" | split: "," %}
   {% for workshop in workshops %}
   {% assign plane_index = forloop.index0 | modulo: 2 %}
@@ -70,7 +70,7 @@ layout: page
 {% if talks.size == 0 %}
 <p class="empty-state">Nothing here yet.</p>
 {% else %}
-<div class="research-gallery events-gallery">
+<div class="events-gallery">
   {% assign planes = "wine,plum,charcoal" | split: "," %}
   {% for talk in talks %}
   {% assign plane_index = forloop.index0 | modulo: 2 %}

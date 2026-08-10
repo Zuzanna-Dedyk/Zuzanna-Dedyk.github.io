@@ -4,7 +4,7 @@ organiser: "A practitioner-focused look at the science behind cupping, for baris
 role: "Facilitator"
 location: ""
 audience: "Coffee Professionals"
-cover_image: "assets/images/pink-Rothko-backgrounf.png"
+cover_image: "assets/images/Izmir-2026-judge-hand.jpg"
 feature_image: ""
 image_alt: ""
 #photos: []
