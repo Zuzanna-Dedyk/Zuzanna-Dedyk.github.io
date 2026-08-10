@@ -3,8 +3,7 @@ layout: default
 ---
 <!--
   _layouts/workshop.html
-  Renders one individual workshop page. Applied automatically to
-  every file in _workshops/ (set in _config.yml).
+  Renders one individual workshop page. Applied automatically to every file in _workshops/ (set in _config.yml).
 -->
 <article class="page item-page">
   <a class="back-link" href="{{ '/events/' | relative_url }}">&larr; Back to Events</a>
@@ -19,12 +18,34 @@ layout: default
   </header>
 
   <div class="item-page__split">
-    {% include item-media.html %}
-
-    <div class="item-page__body">
-      <div class="item-page__meta">
-        {% if page.audience %}<p><strong>Audience:</strong> {{ page.audience }}</p>{% endif %}
+    <!-- Media / Photo Slider Column -->
+    <div class="item-page__media">
+      {% if page.photos and page.photos.size > 0 %}
+      <div class="carousel">
+        <div class="carousel__track">
+          {% for photo in page.photos %}
+          <div class="carousel__slide">
+            <img src="{{ photo | relative_url }}" alt="{{ page.title }} photo {{ forloop.index }}" loading="lazy">
+          </div>
+          {% endfor %}
+        </div>
+        {% if page.photos.size > 1 %}
+        <div class="carousel__indicator">Swipe for more &rarr;</div>
+        {% endif %}
       </div>
+      {% else %}
+      {% include item-media.html %}
+      {% endif %}
+    </div>
+
+
+    <!-- Text & Content Column -->
+    <div class="item-page__body">
+      {% if page.audience %}
+      <div class="item-page__meta">
+        <p><strong>Audience:</strong> {{ page.audience }}</p>
+      </div>
+      {% endif %}
 
       <div class="page__content">
         {{ content }}

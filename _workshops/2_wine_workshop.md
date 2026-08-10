@@ -18,7 +18,7 @@ Lyon, France — Institut Lyfe Research Center, for graduate wine students ("Unl
 Porto, Portugal — invited industry seminar for Sogrape Wines, "The Neurophysiology of Wine Tasting"
 
 
-
+<!--
 #title: "Unlocking Flavour Perception: A Coffee Sensory Neuroscience Workshop for Wine Experts"
 #organiser: "Institut Lyfe Research Center"
 #role: "Facilitator"
@@ -29,3 +29,4 @@ Porto, Portugal — invited industry seminar for Sogrape Wines, "The Neurophysio
 #image_alt: ""
 #photos: []
 #Designed specifically for wine professionals, this workshop used coffee as a controlled sensory model to demonstrate #principles of flavour perception, expertise and multisensory integration.
+-->

@@ -17,15 +17,7 @@ An introduction to how the brain constructs flavour, designed for audiences with
 
 Concepts are illustrated through simple, hands-on demonstrations — including tests of genetic variation in taste sensitivity — before closing with a guided tasting that puts the ideas into practice. The format is adaptable to public talks, festivals, or smaller educational settings.
 
-#Delivered at: [no confirmed past delivery yet — leave the photo strip empty for now, or add once this format runs]
+<!--
+Delivered at: [no confirmed past delivery yet — leave the photo strip empty for now, or add once this format runs]
+-->
 
-
-#title: "Flavour Perception Masterclass"
-#organiser: "Institut Lyfe Research Center"
-#role: "Facilitator"
-#location: "Izmir, Turkey"
-#audience: "Coffee professionals"
-#cover_image: "assets/images/Izmir-2026-portrait.jpg"
-#feature_image: "assets/images/Izmir-2026-prep.jpg"
-#image_alt: ""
-#Designed and facilitated a guided coffee tasting experience for researchers, using sensory evaluation to encourage #discussion about perception, cognition and experimental design.

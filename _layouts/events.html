@@ -34,7 +34,7 @@ layout: page
 <div class="research-gallery">
   {% assign planes = "wine,plum,charcoal" | split: "," %}
   {% for workshop in workshops %}
-  {% assign plane_index = forloop.index0 | modulo: 3 %}
+  {% assign plane_index = forloop.index0 | modulo: 2 %}
   {% assign plane = planes[plane_index] %}
   {% assign cover = workshop.cover_image | default: workshop.photos[0] %}
   {% if cover and cover != "" %}
@@ -73,7 +73,7 @@ layout: page
 <div class="research-gallery">
   {% assign planes = "wine,plum,charcoal" | split: "," %}
   {% for talk in talks %}
-  {% assign plane_index = forloop.index0 | modulo: 3 %}
+  {% assign plane_index = forloop.index0 | modulo: 2 %}
   {% assign plane = planes[plane_index] %}
 
   {% assign cover = talk.cover_image | default: talk.photo %}

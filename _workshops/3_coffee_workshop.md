@@ -32,7 +32,6 @@ Delivered at: Izmir, Turkey 2026; Paris, france 2026;
 
   You can mix all three: e.g. set feature_image to your best shot,
   and still list several photos for the gallery further down the page.
--->
 #title: "Coffee Sensory Analysis"
 #organiser: "Champalimaud Foundation Annual Research Retreat"
 #role: "Facilitator"
@@ -49,3 +48,4 @@ Delivered at: Izmir, Turkey 2026; Paris, france 2026;
 #  - assets/images/Izmir-2026-judge-hand.jpg
 #---
 #Designed and facilitated a guided coffee tasting experience for researchers, using sensory evaluation to encourage #discussion about perception, cognition and experimental design.
+-->
