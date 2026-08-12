@@ -1119,7 +1119,7 @@ a.card {
 }
 
 .about-intro__media {
-  flex: 0 0 38%;
+  flex: 0 0 48%;
   aspect-ratio: 3 / 4;
   overflow: hidden;
 }
@@ -1403,6 +1403,7 @@ a.card {
     transform: translateY(0);
   }
 }
+
 /* Events page 2-column grid override */
 .research-gallery.events-gallery {
   grid-template-columns: repeat(2, 1fr) !important;
