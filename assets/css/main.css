@@ -661,6 +661,34 @@ button:focus-visible {
    Includes two-column split layout and scroll-snapping photo carousel for 
    individual workshop pages.
    -------------------------------------------------------------------------- */
+.item-page__split {
+  display: flex;
+  gap: var(--space-xl);
+  align-items: flex-start;
+}
+
+.item-page__media {
+  flex: 0 0 50%;
+}
+
+.item-page__body {
+  flex: 1 1 auto;
+}
+
+@media (max-width: 760px) {
+  .item-page__split {
+    flex-direction: column;
+  }
+}
+
+.item-page__split--stacked {
+  flex-direction: column;
+}
+
+.item-page__split--stacked .item-page__media {
+  width: 100%;
+}
+
 a.card {
   display: block;
 }
