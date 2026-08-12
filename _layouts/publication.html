@@ -15,40 +15,36 @@ layout: default
       endif %}</p>
   </header>
 
-  <div class="item-page__split">
-    {% include item-media.html %}
-
-    <div class="item-page__body">
-      <div class="publication__meta">
-        <div class="publication__citation">
-          <strong>{{ page.authors }}</strong>{% if page.year %} ({{ page.year }}){% endif %}. <em>{{ page.title }}</em>.
-          {% if page.journal %}<span class="publication__journal"> {{ page.journal }}</span>.{% endif %}
-        </div>
-
-        {% if page.doi %}
-        <p><strong>DOI:</strong> <a href="{{ page.doi }}" target="_blank" rel="noopener noreferrer">View DOI</a></p>
-        {% endif %}
+  <div class="item-page__body">
+    <div class="publication__meta">
+      <div class="publication__citation">
+        <strong>{{ page.authors }}</strong>{% if page.year %} ({{ page.year }}){% endif %}. <em>{{ page.title }}</em>.
+        {% if page.journal %}<span class="publication__journal"> {{ page.journal }}</span>.{% endif %}
       </div>
 
-      {% if page.abstract %}
-      <section class="publication__abstract">
-        <h2>Abstract</h2>
-        <p>{{ page.abstract }}</p>
-      </section>
-      {% endif %}
-
-      {% if content.size > 0 %}
-      <section class="publication__content page__content">
-        {{ content }}
-      </section>
-      {% endif %}
-
-      {% if page.citation %}
-      <section class="publication__bibtex">
-        <h2>Citation</h2>
-        <pre class="publication__bibtex-code">{{ page.citation }}</pre>
-      </section>
+      {% if page.doi %}
+      <p><strong>DOI:</strong> <a href="{{ page.doi }}" target="_blank" rel="noopener noreferrer">View DOI</a></p>
       {% endif %}
     </div>
+
+    {% if page.abstract %}
+    <section class="publication__abstract">
+      <h2>Abstract</h2>
+      <p>{{ page.abstract }}</p>
+    </section>
+    {% endif %}
+
+    {% if content.size > 0 %}
+    <section class="publication__content page__content">
+      {{ content }}
+    </section>
+    {% endif %}
+
+    {% if page.citation %}
+    <section class="publication__bibtex">
+      <h2>Citation</h2>
+      <pre class="publication__bibtex-code">{{ page.citation }}</pre>
+    </section>
+    {% endif %}
   </div>
 </article>
