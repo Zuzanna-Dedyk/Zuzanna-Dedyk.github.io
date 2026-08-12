@@ -6,23 +6,16 @@ portrait: "assets/images/1.jpg"
 image_alt: "Portrait of Zuzanna Dedyk"
 
 # --------------------------------------------------------------
-# TIMELINE
-# Add, remove, or reorder entries freely — newest first works well,
-# but the order is entirely up to you. "place" is optional.
+# RESOURCE LINKS
+# Row of buttons under the intro. Add a "url" pointing to a PDF (or
+# any page/link) and a short "label". To add your coffee-judging
+# resume later, just add a second entry below the CV one.
 # --------------------------------------------------------------
-#timeline:
-# - year: "2024 – present"
-#    title: "PhD in Neuroscience"
-#    place: "Champalimaud Foundation · Université PSL (EPHE) · Institut Lyfe"
-#  - year: "2023 – 2024"
-#    title: "Research Technician, Systems Neuroscience Laboratory"
-#    place: "Champalimaud Research"
-#  - year: "2021 – 2023"
-#    title: "MRes in Cognitive Neuroscience"
-#    place: "Radboud University — Donders Institute for Brain, Behaviour and Cognition"
-#  - year: "2017 – 2020"
-#    title: "BSc in Mathematics and Natural Sciences, Neurobiology Specialisation"
-#    place: "Jagiellonian University, Kraków"
+resource_links:
+  - label: "Zuzanna Dedyk CV"
+    url: "assets/files/zuzanna-dedyk-cv.pdf"
+#  - label: "Coffee Judging Résumé"
+#    url: "assets/files/zuzanna-dedyk-coffee-resume.pdf"
 ---
 
 <!--
