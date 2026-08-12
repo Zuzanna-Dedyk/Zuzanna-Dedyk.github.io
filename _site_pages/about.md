@@ -13,7 +13,7 @@ image_alt: "Portrait of Zuzanna Dedyk"
 # --------------------------------------------------------------
 resource_links:
   - label: "Zuzanna Dedyk CV"
-    url: "assets/files/zuzanna-dedyk-cv.pdf"
+    url: "assets/files/CV_Dedyk_2026-7.pdf"
 #  - label: "Coffee Judging Résumé"
 #    url: "assets/files/zuzanna-dedyk-coffee-resume.pdf"
 ---
