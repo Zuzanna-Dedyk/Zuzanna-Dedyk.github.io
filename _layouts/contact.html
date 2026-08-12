@@ -10,24 +10,34 @@ layout: page
   You should never need to edit this file — edit contact.md instead.
   Front matter fields used here: affiliations (a list of name + url).
 -->
-<div class="contact-page">
-  <a class="contact-page__email underline-draw" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+<div class="about-intro">
+  <div class="about-intro__text page__content">
+    {{ content }}
 
-  {% if page.affiliations %}
-  <div class="contact-page__affiliations">
-    <span class="contact-page__label">Affiliations</span>
-    <ul>
-      {% for affiliation in page.affiliations %}
-      <li><a href="{{ affiliation.url }}" target="_blank" rel="noopener noreferrer">{{ affiliation.name }}</a></li>
-      {% endfor %}
-    </ul>
+    <a class="contact-page__email underline-draw" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+
+    {% if page.affiliations %}
+    <div class="contact-page__affiliations">
+      <span class="contact-page__label">Affiliations</span>
+      <ul>
+        {% for affiliation in page.affiliations %}
+        <li><a href="{{ affiliation.url }}" target="_blank" rel="noopener noreferrer">{{ affiliation.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    <div class="contact-page__social">
+      <span class="contact-page__label">Elsewhere</span>
+      <ul class="social-links social-links--home">
+        {% include social-links.html %}
+      </ul>
+    </div>
   </div>
-  {% endif %}
 
-  <div class="contact-page__social">
-    <span class="contact-page__label">Elsewhere</span>
-    <ul class="social-links social-links--home">
-      {% include social-links.html %}
-    </ul>
+  <div class="about-intro__media">
+    {% if page.portrait and page.portrait != "" %}
+    <img src="{{ page.portrait | relative_url }}" alt="{{ page.image_alt | default: site.author.name }}">
+    {% endif %}
   </div>
 </div>
