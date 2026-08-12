@@ -27,14 +27,13 @@ layout: page
 
   <div class="about-intro__text page__content">
     {{ content }}
-  </div>
-</div>
 
-{% if page.resource_links %}
-<div class="resource-links">
-  {% for link in page.resource_links %}
-  <a class="btn btn--primary" href="{{ link.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{
-    link.label }}</a>
-  {% endfor %}
-</div>
-{% endif %}
+    {% if page.resource_links %}
+    <div class="resource-links">
+      {% for link in page.resource_links %}
+      <a class="btn btn--primary" href="{{ link.url | relative_url }}" target="_blank" rel="noopener noreferrer">{{
+        link.label }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
