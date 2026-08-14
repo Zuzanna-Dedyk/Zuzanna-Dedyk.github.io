@@ -8,10 +8,10 @@ cover_image: "assets/images/Izmir-2026-portrait.jpg"
 feature_image: "assets/images/Izmir-2026-prep.jpg"
 image_alt: ""
 photos:
-  - "assets/images/Izmir-2026-baner.jpg"
-  - "assets/images/Izmir-2026-group.jpg"
-  - "assets/images/Izmir-2026-notes.jpg"
-  - "assets/images/Izmir-2026-judge-hand.jpg"
+  - "assets/images/Izmir-2026-judge-face.jpg"
+  - "assets/images/Izmir-2026-prep.jpg"
+  - "aassets/images/Izmir-2026-baner.jpg"
+  - "assets/images/kids-summercamp-2024-pt.JPG"
 ---
 ### Why does the same cup never taste quite the same to two people?
 
