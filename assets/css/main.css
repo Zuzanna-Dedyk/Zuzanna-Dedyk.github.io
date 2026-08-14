@@ -663,30 +663,40 @@ button:focus-visible {
    -------------------------------------------------------------------------- */
 .item-page__split {
   display: flex;
-  gap: var(--space-xl);
-  align-items: flex-start;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+  width: 100%;
 }
 
-.item-page__media {
+@media (min-width: 760px) {
+  .item-page__split {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-xl);
+  }
+}
+
+.item-page__media,
+.item-page__media-col {
   flex: 0 0 50%;
+  min-width: 0;
+  width: 100%;
 }
 
 .item-page__body {
   flex: 1 1 auto;
-}
-
-@media (max-width: 760px) {
-  .item-page__split {
-    flex-direction: column;
-  }
+  min-width: 0;
+  width: 100%;
 }
 
 .item-page__split--stacked {
   flex-direction: column;
 }
 
-.item-page__split--stacked .item-page__media {
-  width: 100%;
+.item-page__split--stacked .item-page__media,
+.item-page__split--stacked .item-page__media-col {
+  flex: 0 0 auto;
 }
 
 a.card {
@@ -715,35 +725,6 @@ a.card {
 
 .back-link:hover {
   color: var(--color-accent);
-}
-
-/* --- Item Page Split Layout Engine --- */
-/* Stacks media and body vertically on mobile, switching to a 50/50 side-by-side
-   split grid on desktop viewports */
-.item-page__split {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-  margin-top: var(--space-lg);
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  .item-page__split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-xl);
-    align-items: start;
-  }
-}
-
-/* CRITICAL GRID CONTAINMENT FIX: In CSS Grid, items default to min-width: auto.
-   High-resolution photos will expand the grid track beyond 50% unless min-width
-   is explicitly set to 0. */
-.item-page__media-col,
-.item-page__body {
-  min-width: 0;
-  width: 100%;
 }
 
 /* --- Media / Photo Gallery Elements --- */
